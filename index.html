@@ -23,7 +23,7 @@
     --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  html { font-size: 16px; -webkit-text-size-adjust: 100%; }
   body {
     font-family: var(--font);
     color: var(--ink);
@@ -91,7 +91,6 @@
   }
   .sticky-top .route { color: var(--forest); font-weight: 700; }
 
-  /* ── Day Nav ── */
   .day-nav {
     display: flex; gap: 6px; overflow-x: auto; padding: 0 12px 10px; scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
@@ -113,22 +112,19 @@
 
   .days { padding: 20px 12px; }
   .day {
-    background: var(--bg-card); border-radius: 20px; overflow: hidden; margin-bottom: 16px;
+    background: var(--bg-card); border-radius: 20px; overflow: hidden; margin-bottom: 20px;
     box-shadow: 0 1px 2px rgba(26,36,32,.04), 0 4px 12px rgba(26,36,32,.06);
-    transition: box-shadow .3s;
+    transition: transform .2s;
   }
-  .day.expanded { box-shadow: 0 1px 4px rgba(26,36,32,.06), 0 8px 24px rgba(26,36,32,.1); }
+  .day:active { transform: scale(.99); }
   .day-hd {
-    position: relative; padding: 18px 18px; cursor: pointer;
+    position: relative; padding: 20px 18px;
     background: linear-gradient(135deg, var(--forest) 0%, var(--forest-light) 100%);
-    color: white; overflow: hidden; user-select: none;
-    transition: padding .3s;
+    color: white; overflow: hidden;
   }
-  .day.expanded .day-hd { padding-bottom: 14px; }
   .day-hd::after {
     content: ''; position: absolute; top: -30px; right: -30px; width: 120px; height: 120px;
     background: radial-gradient(circle, rgba(255,255,255,.08), transparent); border-radius: 50%;
-    pointer-events: none;
   }
   .day-hd-row { display: flex; align-items: flex-end; justify-content: space-between; position: relative; z-index: 1; }
   .day-num { font-size: 48px; line-height: 1; font-weight: 800; letter-spacing: -.04em; color: var(--amber); }
@@ -136,24 +132,9 @@
   .day-info { text-align: right; }
   .day-date { font-size: 12px; color: rgba(255,255,255,.7); font-weight: 500; }
   .day-city { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 2px; }
-  .day-title { font-size: 18px; font-weight: 700; color: white; margin-top: 8px; position: relative; z-index: 1; line-height: 1.3; }
-  .day-route { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 11px; color: rgba(255,255,255,.65); position: relative; z-index: 1; }
+  .day-title { font-size: 18px; font-weight: 700; color: white; margin-top: 10px; position: relative; z-index: 1; line-height: 1.3; }
+  .day-route { display: flex; align-items: center; gap: 4px; margin-top: 6px; font-size: 11px; color: rgba(255,255,255,.65); position: relative; z-index: 1; }
   .day-route b { color: var(--amber-light); font-weight: 600; }
-
-  .day-hd .chevron {
-    position: absolute; right: 18px; bottom: 14px; z-index: 2;
-    width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;
-    font-size: 10px; color: rgba(255,255,255,.5); transition: transform .3s;
-    background: rgba(255,255,255,.1); border-radius: 50%;
-  }
-  .day.expanded .chevron { transform: rotate(180deg); color: var(--amber-light); background: rgba(212,149,58,.2); }
-
-  .day-body {
-    max-height: 0; overflow: hidden;
-    transition: max-height .45s cubic-bezier(.4,0,.2,1), opacity .3s;
-    opacity: .6;
-  }
-  .day.expanded .day-body { opacity: 1; }
 
   .day-wx { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 10px 16px; background: var(--sky-bg); border-bottom: 1px solid var(--line); font-size: 12px; color: #3a6a8a; }
   .day-wx .icon { font-size: 18px; }
@@ -240,6 +221,38 @@
   .img-strip.kunming { background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80'); }
   .img-strip.dali { background-image: url('https://images.unsplash.com/photo-1559827291-a6e1e22b2b9b?w=600&q=80'); }
   .img-strip.lijiang { background-image: url('https://images.unsplash.com/photo-1528164344705-47542687000d?w=600&q=80'); }
+
+  /* ── 物品清单 ── */
+  .pack { padding: 0 12px; }
+  .pack-block { background: var(--bg-card); border-radius: 14px; padding: 16px; margin-bottom: 14px; border: 1px solid var(--line); }
+  .pack-block h3 { font-size: 15px; font-weight: 700; color: var(--forest); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .pack-block h3 .tag { font-size: 9px; background: var(--amber); color: var(--ink); padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+  .pack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .pack-item { font-size: 12px; color: var(--ink-soft); padding: 6px 8px; background: #f8faf7; border-radius: 8px; line-height: 1.4; }
+  .pack-item .lbl { font-weight: 600; color: var(--ink); display: block; }
+  .pack-item .sub { font-size: 10px; color: var(--ink-muted); }
+  .pack-note { font-size: 12px; color: var(--warn); background: var(--warn-bg); padding: 10px 12px; border-radius: 8px; margin-top: 8px; line-height: 1.5; }
+
+  /* ── 购物清单 ── */
+  .shop-list { padding: 0 12px; }
+  .shop-cat { margin-bottom: 18px; }
+  .shop-cat h3 { font-size: 14px; font-weight: 700; color: var(--forest); margin-bottom: 8px; padding-bottom: 4px; border-bottom: 1px solid var(--line); }
+  .shop-item { display: flex; justify-content: space-between; align-items: start; padding: 8px 0; border-bottom: 1px dashed #eee; gap: 8px; }
+  .shop-item:last-child { border: none; }
+  .shop-name { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .shop-name .badge { display: inline-block; padding: 1px 5px; background: var(--amber); color: var(--ink); font-size: 8px; font-weight: 700; border-radius: 4px; margin-left: 3px; vertical-align: middle; }
+  .shop-price { font-size: 12px; color: var(--brick); font-weight: 600; flex-shrink: 0; }
+  .shop-desc { font-size: 11px; color: var(--ink-muted); margin-top: 2px; line-height: 1.5; }
+
+  /* ── 注意事项 ── */
+  .tips { padding: 0 12px; }
+  .tip-block { background: var(--bg-card); border-radius: 14px; padding: 16px; margin-bottom: 14px; border: 1px solid var(--line); }
+  .tip-block h3 { font-size: 14px; font-weight: 700; color: var(--forest); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .tip-list { list-style: none; padding: 0; }
+  .tip-list li { font-size: 12px; color: var(--ink-soft); padding: 5px 0; padding-left: 16px; position: relative; line-height: 1.5; }
+  .tip-list li::before { content: '·'; position: absolute; left: 4px; color: var(--pine); font-weight: 700; }
+  .tip-list li b { color: var(--ink); font-weight: 600; }
+  .tip-list li .warn-t { color: var(--warn); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -285,23 +298,20 @@
       <div class="day-hd-row"><div class="day-num">D1<sup>/06</sup></div><div class="day-info"><div class="day-date">7月17日 周五</div><div class="day-city">抵达昆明</div></div></div>
       <div class="day-title">翠湖边 citywalk · 黑珍珠晚餐</div>
       <div class="day-route">🛬 抵昆 → <b>翠湖宾馆</b> → 4 站老城 → 翠府</div>
-      <div class="chevron">▼</div>
     </div>
-    <div class="day-body">
-      <div class="day-wx"><span class="icon">🌦</span> 多云转阵雨 <span class="sep">|</span> <span class="temp">18-25°C</span> <span class="sep">|</span> ☂️ 带伞</div>
-      <div class="tl">
-        <div class="tb"><div class="tb-time"><b>12:00</b></div><div class="tb-body"><div class="tb-title">专车接机 · 入住</div><div class="tb-meta">昆明中维翠湖宾馆 · 出门即翠湖</div></div></div>
-        <div class="meal">
-          <div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">Lunch</div><div class="meal-name">⭐ 盈江傣味园<span class="badge">首选</span></div><div class="meal-meta">翠湖北路 66 号 · 步行 3 分 · 11:00-21:00 · ¥50-80</div></div>
-        </div>
-        <div class="tb"><div class="tb-time"><b>14:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【昆明老街】</span> 文庙直街 → 甬道街</div><div class="tb-meta">清末民初老建筑群 · 1.5 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>清末民初老建筑群,文庙直街、甬道街、景星街;聂耳故居;文庙大成殿</div><div class="tb-detail wan"><span class="lbl">玩什么</span>沿街小店逛,孩子看鲜花/奇石/小动物</div><div class="tb-detail bilei"><span class="lbl">避雷</span>部分小巷有"私人博物馆"收费陷阱</div></div></div>
-        <div class="tb"><div class="tb-time"><b>15:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【翠湖公园】</span> 荷花、湖心亭、喂松鼠</div><div class="tb-meta">出酒店即到 · 1 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>7 月荷花盛开;九龙池周边最美;湖心亭;环湖步道两旁法国梧桐</div><div class="tb-detail wan"><span class="lbl">玩什么</span>喂松鼠(带花生/瓜子);划船 30-50 元/小时</div><div class="tb-detail bilei"><span class="lbl">避雷</span>湖边"茶叶店"多推销</div></div></div>
-        <div class="tb"><div class="tb-time"><b>16:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【陆军讲武堂】</span> 黄墙琉璃瓦 · 免费</div><div class="tb-meta">30-45 分</div><div class="tb-detail kan"><span class="lbl">看什么</span>黄墙琉璃瓦建筑,民国时期"黄埔军校"前身;军事博物馆</div></div></div>
-        <div class="tb"><div class="tb-time"><b>16:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【黄公东街】</span> 民国风文创小店</div><div class="tb-meta">30-60 分</div><div class="tb-detail kan"><span class="lbl">看什么</span>民国风小街,文创小店;街边咖啡馆、奶茶店</div></div></div>
-        <div class="tb"><div class="tb-time"><b>17:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【南强夜市】</span> 烤乳扇、烧豆腐</div><div class="tb-meta">步行 15 分 · 2 小时</div><div class="tb-detail wan"><span class="lbl">玩什么</span>烤乳扇(玫瑰酱)/烧豆腐/稀豆粉/木瓜水/玫瑰凉糕</div><div class="tb-detail bilei"><span class="lbl">避雷</span>过辣菜让老板"不辣/微辣"</div></div></div>
-        <div class="meal"><div class="meal-ic di">D</div><div class="meal-body"><div class="meal-lbl">Dinner · 黑珍珠一钻</div><div class="meal-name">⭐⭐⭐ 翠府</div><div class="meal-meta">翠湖北路 100 号 · 步行 1-2 分 · 11-14/17-22 · ¥379 · 提前 1-2 天订位</div></div></div>
-        <div class="meal"><div class="meal-ic sn">N</div><div class="meal-body"><div class="meal-lbl">夜宵</div><div class="meal-name">胖嬢烧烤</div><div class="meal-meta">西园北路 32 号 · 车程 10-15 分 · 18:00 后</div></div></div>
+    <div class="day-wx"><span class="icon">🌦</span> 多云转阵雨 <span class="sep">|</span> <span class="temp">18-25°C</span> <span class="sep">|</span> ☂️ 带伞</div>
+    <div class="tl">
+      <div class="tb"><div class="tb-time"><b>12:00</b></div><div class="tb-body"><div class="tb-title">专车接机 · 入住</div><div class="tb-meta">昆明中维翠湖宾馆 · 出门即翠湖</div></div></div>
+      <div class="meal">
+        <div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">Lunch</div><div class="meal-name">⭐ 盈江傣味园<span class="badge">首选</span></div><div class="meal-meta">翠湖北路 66 号 · 步行 3 分 · 11:00-21:00 · ¥50-80</div></div>
       </div>
+      <div class="tb"><div class="tb-time"><b>14:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【昆明老街】</span> 文庙直街 → 甬道街</div><div class="tb-meta">清末民初老建筑群 · 1.5 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>清末民初老建筑群,文庙直街、甬道街、景星街;聂耳故居;文庙大成殿</div><div class="tb-detail wan"><span class="lbl">玩什么</span>沿街小店逛,孩子看鲜花/奇石/小动物</div><div class="tb-detail bilei"><span class="lbl">避雷</span>部分小巷有"私人博物馆"收费陷阱</div></div></div>
+      <div class="tb"><div class="tb-time"><b>15:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【翠湖公园】</span> 荷花、湖心亭、喂松鼠</div><div class="tb-meta">出酒店即到 · 1 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>7 月荷花盛开;九龙池周边最美;湖心亭;环湖步道两旁法国梧桐</div><div class="tb-detail wan"><span class="lbl">玩什么</span>喂松鼠(带花生/瓜子);划船 30-50 元/小时</div><div class="tb-detail bilei"><span class="lbl">避雷</span>湖边"茶叶店"多推销</div></div></div>
+      <div class="tb"><div class="tb-time"><b>16:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【陆军讲武堂】</span> 黄墙琉璃瓦 · 免费</div><div class="tb-meta">30-45 分</div><div class="tb-detail kan"><span class="lbl">看什么</span>黄墙琉璃瓦建筑,民国时期"黄埔军校"前身;军事博物馆</div></div></div>
+      <div class="tb"><div class="tb-time"><b>16:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【黄公东街】</span> 民国风文创小店</div><div class="tb-meta">30-60 分</div><div class="tb-detail kan"><span class="lbl">看什么</span>民国风小街,文创小店;街边咖啡馆、奶茶店</div></div></div>
+      <div class="tb"><div class="tb-time"><b>17:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【南强夜市】</span> 烤乳扇、烧豆腐</div><div class="tb-meta">步行 15 分 · 2 小时</div><div class="tb-detail wan"><span class="lbl">玩什么</span>烤乳扇(玫瑰酱)/烧豆腐/稀豆粉/木瓜水/玫瑰凉糕</div><div class="tb-detail bilei"><span class="lbl">避雷</span>过辣菜让老板"不辣/微辣"</div></div></div>
+      <div class="meal"><div class="meal-ic di">D</div><div class="meal-body"><div class="meal-lbl">Dinner · 黑珍珠一钻</div><div class="meal-name">⭐⭐⭐ 翠府</div><div class="meal-meta">翠湖北路 100 号 · 步行 1-2 分 · 11-14/17-22 · ¥379 · 提前 1-2 天订位</div></div></div>
+      <div class="meal"><div class="meal-ic sn">N</div><div class="meal-body"><div class="meal-lbl">夜宵</div><div class="meal-name">胖嬢烧烤</div><div class="meal-meta">西园北路 32 号 · 车程 10-15 分 · 18:00 后</div></div></div>
     </div>
   </article>
 
@@ -310,18 +320,15 @@
       <div class="day-hd-row"><div class="day-num">D2<sup>/06</sup></div><div class="day-info"><div class="day-date">7月18日 周六</div><div class="day-city">昆明→大理</div></div></div>
       <div class="day-title">西山+捞鱼河 → 抵大理</div>
       <div class="day-route">🥾 西山 → 玻璃船 → 🚄 19:50 抵大理 · <b>悦山海</b></div>
-      <div class="chevron">▼</div>
     </div>
-    <div class="day-body">
-      <div class="day-wx"><span class="icon">⛅</span> 多云转阵雨 <span class="sep">|</span> <span class="temp">17-26°C</span> <span class="sep">|</span> 🧥 薄外套</div>
-      <div class="tl">
-        <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">⭐ 晨曦豆花米线</div><div class="meal-meta">钱局街白云巷 33 号 · 步行 5 分 · 07:00-20:00 · ¥15-25</div></div></div>
-        <div class="tb"><div class="tb-time"><b>08:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【西山+龙门石窟】</span> 俯瞰滇池</div><div class="tb-meta">含门票+往返大巴+单边索道 · 3.5 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>俯瞰滇池;龙门石窟悬崖石刻;华亭寺/太华寺千年古刹;茶马花街</div><div class="tb-detail bilei"><span class="lbl">避雷</span>雨季栈道湿滑;龙门石窟"上刀山"段窄,孩子紧跟;山下"茶叶店"推销多</div></div></div>
-        <div class="meal"><div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">Lunch</div><div class="meal-name">茶马花街小吃</div><div class="meal-meta">山下仿古商业街 · 各种云南小吃</div></div></div>
-        <div class="tb"><div class="tb-time"><b>14:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【捞鱼河湿地公园】</span> 水上水杉林、玻璃船</div><div class="tb-meta">3 小时 · 玻璃船 80-120 元/小时(孩子最爱)</div><div class="tb-detail kan"><span class="lbl">看什么</span>水上水杉林(夏季绿色);玻璃船、透明船等水上项目</div></div></div>
-        <div class="tb"><div class="tb-time"><b>17:42</b></div><div class="tb-body"><div class="tb-title">🚄 动车 D3960 → 大理</div><div class="tb-meta">2h8min · 19:50 抵大理</div></div></div>
-        <div class="meal"><div class="meal-ic di">D</div><div class="meal-body"><div class="meal-lbl">Dinner</div><div class="meal-name">⭐ 富源脆皮猪脚</div><div class="meal-meta">大理大学附近 · 步行可达 · 09:00-22:00 · ¥40-60 · 酸菜锅一锅 38</div></div></div>
-      </div>
+    <div class="day-wx"><span class="icon">⛅</span> 多云转阵雨 <span class="sep">|</span> <span class="temp">17-26°C</span> <span class="sep">|</span> 🧥 薄外套</div>
+    <div class="tl">
+      <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">⭐ 晨曦豆花米线</div><div class="meal-meta">钱局街白云巷 33 号 · 步行 5 分 · 07:00-20:00 · ¥15-25</div></div></div>
+      <div class="tb"><div class="tb-time"><b>08:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【西山+龙门石窟】</span> 俯瞰滇池</div><div class="tb-meta">含门票+往返大巴+单边索道 · 3.5 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>俯瞰滇池;龙门石窟悬崖石刻;华亭寺/太华寺千年古刹;茶马花街</div><div class="tb-detail bilei"><span class="lbl">避雷</span>雨季栈道湿滑;龙门石窟"上刀山"段窄,孩子紧跟;山下"茶叶店"推销多</div></div></div>
+      <div class="meal"><div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">Lunch</div><div class="meal-name">茶马花街小吃</div><div class="meal-meta">山下仿古商业街 · 各种云南小吃</div></div></div>
+      <div class="tb"><div class="tb-time"><b>14:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【捞鱼河湿地公园】</span> 水上水杉林、玻璃船</div><div class="tb-meta">3 小时 · 玻璃船 80-120 元/小时(孩子最爱)</div><div class="tb-detail kan"><span class="lbl">看什么</span>水上水杉林(夏季绿色);玻璃船、透明船等水上项目</div></div></div>
+      <div class="tb"><div class="tb-time"><b>17:42</b></div><div class="tb-body"><div class="tb-title">🚄 动车 D3960 → 大理</div><div class="tb-meta">2h8min · 19:50 抵大理</div></div></div>
+      <div class="meal"><div class="meal-ic di">D</div><div class="meal-body"><div class="meal-lbl">Dinner</div><div class="meal-name">⭐ 富源脆皮猪脚</div><div class="meal-meta">大理大学附近 · 步行可达 · 09:00-22:00 · ¥40-60 · 酸菜锅一锅 38</div></div></div>
     </div>
   </article>
 
@@ -332,18 +339,15 @@
       <div class="day-hd-row"><div class="day-num">D3<sup>/06</sup></div><div class="day-info"><div class="day-date">7月19日 周日</div><div class="day-city">大理深度</div></div></div>
       <div class="day-title">古城+磻溪骑行+喜洲</div>
       <div class="day-route">🚲 古城 → S 湾 → 喜洲 · <b>悦山海</b></div>
-      <div class="chevron">▼</div>
     </div>
-    <div class="day-body">
-      <div class="day-wx"><span class="icon">☀️</span> 多云间晴 <span class="sep">|</span> <span class="temp">17-25°C</span> <span class="sep">|</span> 🧴 防晒 SPF50+</div>
-      <div class="tl">
-        <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">⭐ 顺喜小锅米线</div><div class="meal-meta">古城内 · 09:00-18:00 · ¥15-25 · 可清汤/少辣</div></div></div>
-        <div class="tb"><div class="tb-time"><b>08:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【大理古城】</span> 复兴路、人民路、五华楼</div><div class="tb-meta">2 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>复兴路(主街);人民路(文创);五华楼(地标);古城墙</div><div class="tb-detail wan"><span class="lbl">玩什么</span>马车/电瓶车环游 20-30 元;银匠街;扎染店</div><div class="tb-detail bilei"><span class="lbl">避雷</span>主街物价偏高,买特产去喜洲/周城</div></div></div>
-        <div class="tb"><div class="tb-time"><b>10:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【磻溪 S 湾】</span> 洱海边骑行</div><div class="tb-meta">1.5 小时</div><div class="tb-detail wan"><span class="lbl">玩什么</span>自行车 20-50 元/小时(亲子最爱)</div><div class="tb-detail bilei"><span class="lbl">避雷</span>旺季人多,10:00 前或 17:00 后最佳</div></div></div>
-        <div class="meal"><div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">Lunch · 排队猛 (11:30 前到)</div><div class="meal-name">⭐ 岛七·白族人家私房菜</div><div class="meal-meta">古城内 · 10:30-14/16:30-22 · ¥60-80 · 薄荷炸排骨 45</div></div></div>
-        <div class="tb"><div class="tb-time"><b>13:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【喜洲古镇】</span> 转角楼+麦田+严家大院</div><div class="tb-meta">4 小时 · 含小火车+扎染</div><div class="tb-detail kan"><span class="lbl">看什么</span>转角楼;四季麦田;海舌公园;严家大院(三道茶 30 元)</div><div class="tb-detail wan"><span class="lbl">玩什么</span>麦田小火车 30 元;扎染 50-100 元;白族三道茶</div><div class="tb-detail bilei"><span class="lbl">避雷</span>旺季麦田人多,上午去更出片</div></div></div>
-        <div class="meal"><div class="meal-ic di">D</div><div class="meal-body"><div class="meal-lbl">Dinner</div><div class="meal-name">⭐ 富源脆皮猪脚</div><div class="meal-meta">大理大学 · 步行可达 · 09:00-22:00 · ¥40-60</div></div></div>
-      </div>
+    <div class="day-wx"><span class="icon">☀️</span> 多云间晴 <span class="sep">|</span> <span class="temp">17-25°C</span> <span class="sep">|</span> 🧴 防晒 SPF50+</div>
+    <div class="tl">
+      <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">⭐ 顺喜小锅米线</div><div class="meal-meta">古城内 · 09:00-18:00 · ¥15-25 · 可清汤/少辣</div></div></div>
+      <div class="tb"><div class="tb-time"><b>08:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【大理古城】</span> 复兴路、人民路、五华楼</div><div class="tb-meta">2 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>复兴路(主街);人民路(文创);五华楼(地标);古城墙</div><div class="tb-detail wan"><span class="lbl">玩什么</span>马车/电瓶车环游 20-30 元;银匠街;扎染店</div><div class="tb-detail bilei"><span class="lbl">避雷</span>主街物价偏高,买特产去喜洲/周城</div></div></div>
+      <div class="tb"><div class="tb-time"><b>10:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【磻溪 S 湾】</span> 洱海边骑行</div><div class="tb-meta">1.5 小时</div><div class="tb-detail wan"><span class="lbl">玩什么</span>自行车 20-50 元/小时(亲子最爱)</div><div class="tb-detail bilei"><span class="lbl">避雷</span>旺季人多,10:00 前或 17:00 后最佳</div></div></div>
+      <div class="meal"><div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">Lunch · 排队猛 (11:30 前到)</div><div class="meal-name">⭐ 岛七·白族人家私房菜</div><div class="meal-meta">古城内 · 10:30-14/16:30-22 · ¥60-80 · 薄荷炸排骨 45</div></div></div>
+      <div class="tb"><div class="tb-time"><b>13:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【喜洲古镇】</span> 转角楼+麦田+严家大院</div><div class="tb-meta">4 小时 · 含小火车+扎染</div><div class="tb-detail kan"><span class="lbl">看什么</span>转角楼;四季麦田;海舌公园;严家大院(三道茶 30 元)</div><div class="tb-detail wan"><span class="lbl">玩什么</span>麦田小火车 30 元;扎染 50-100 元;白族三道茶</div><div class="tb-detail bilei"><span class="lbl">避雷</span>旺季麦田人多,上午去更出片</div></div></div>
+      <div class="meal"><div class="meal-ic di">D</div><div class="meal-body"><div class="meal-lbl">Dinner</div><div class="meal-name">⭐ 富源脆皮猪脚</div><div class="meal-meta">大理大学 · 步行可达 · 09:00-22:00 · ¥40-60</div></div></div>
     </div>
   </article>
 
@@ -352,19 +356,16 @@
       <div class="day-hd-row"><div class="day-num">D4<sup>/06</sup></div><div class="day-info"><div class="day-date">7月20日 周一</div><div class="day-city">大理→丽江</div></div></div>
       <div class="day-title">理想邦+双廊 → 抵丽江</div>
       <div class="day-route">📸 蓝白小镇 → 双廊 → 抵丽江 · <b>汐屿山渡</b></div>
-      <div class="chevron">▼</div>
     </div>
-    <div class="day-body">
-      <div class="day-wx"><span class="icon">🌥</span> 多云转阵雨 <span class="sep">|</span> <span class="temp">17-24°C</span> <span class="sep">|</span> 🧥 苍山云雾</div>
-      <div class="tl">
-        <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">⭐ 巍山耙肉饵丝</div><div class="meal-meta">下关区 · 08:30-17:30 · ¥20-30 · 包车沿途</div></div></div>
-        <div class="tb"><div class="tb-time"><b>09:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【圣托里尼理想邦】</span> 蓝白希腊风</div><div class="tb-meta">2.5 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>蓝白希腊风建筑群;洱海、苍山同框</div><div class="tb-detail bilei"><span class="lbl">避雷</span>本质人造景观,不要期望太高</div></div></div>
-        <div class="meal"><div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">下午茶</div><div class="meal-name">理想邦景点自带下午茶</div><div class="meal-meta">孩子果汁/小吃</div></div></div>
-        <div class="tb"><div class="tb-time"><b>14:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【双廊古镇】</span> 苍洱第一镇</div><div class="tb-meta">2 小时 · 沿途加餐:海东茄子烧烤/李氏烤卤/如意旺子米线</div><div class="tb-detail kan"><span class="lbl">看什么</span>苍洱第一镇;杨丽萍太阳宫(外观);双廊街巷</div><div class="tb-detail bilei"><span class="lbl">避雷</span>太阳宫不开放;双廊游客店较多</div></div></div>
-        <div class="tb"><div class="tb-time"><b>16:30</b></div><div class="tb-body"><div class="tb-title">🚐 包车大理 → 丽江</div><div class="tb-meta">约 2.5 小时</div></div></div>
-        <div class="meal"><div class="meal-ic di">D</div><div class="meal-body"><div class="meal-lbl">Dinner</div><div class="meal-name">⭐⭐ 阿婆情腊排骨(古城旗舰店)</div><div class="meal-meta">古城五一街 38 号 · 步行 10 分 · 07:00-24:00 · ¥70-100</div></div></div>
-        <div class="tb"><div class="tb-time"><b>21:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【丽江古城】</span> 四方街夜色</div><div class="tb-meta">维护费 50 元/人</div></div></div>
-      </div>
+    <div class="day-wx"><span class="icon">🌥</span> 多云转阵雨 <span class="sep">|</span> <span class="temp">17-24°C</span> <span class="sep">|</span> 🧥 苍山云雾</div>
+    <div class="tl">
+      <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">⭐ 巍山耙肉饵丝</div><div class="meal-meta">下关区 · 08:30-17:30 · ¥20-30 · 包车沿途</div></div></div>
+      <div class="tb"><div class="tb-time"><b>09:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【圣托里尼理想邦】</span> 蓝白希腊风</div><div class="tb-meta">2.5 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>蓝白希腊风建筑群;洱海、苍山同框</div><div class="tb-detail bilei"><span class="lbl">避雷</span>本质人造景观,不要期望太高</div></div></div>
+      <div class="meal"><div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">下午茶</div><div class="meal-name">理想邦景点自带下午茶</div><div class="meal-meta">孩子果汁/小吃</div></div></div>
+      <div class="tb"><div class="tb-time"><b>14:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【双廊古镇】</span> 苍洱第一镇</div><div class="tb-meta">2 小时 · 沿途加餐:海东茄子烧烤/李氏烤卤/如意旺子米线</div><div class="tb-detail kan"><span class="lbl">看什么</span>苍洱第一镇;杨丽萍太阳宫(外观);双廊街巷</div><div class="tb-detail bilei"><span class="lbl">避雷</span>太阳宫不开放;双廊游客店较多</div></div></div>
+      <div class="tb"><div class="tb-time"><b>16:30</b></div><div class="tb-body"><div class="tb-title">🚐 包车大理 → 丽江</div><div class="tb-meta">约 2.5 小时</div></div></div>
+      <div class="meal"><div class="meal-ic di">D</div><div class="meal-body"><div class="meal-lbl">Dinner</div><div class="meal-name">⭐⭐ 阿婆情腊排骨(古城旗舰店)</div><div class="meal-meta">古城五一街 38 号 · 步行 10 分 · 07:00-24:00 · ¥70-100</div></div></div>
+      <div class="tb"><div class="tb-time"><b>21:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【丽江古城】</span> 四方街夜色</div><div class="tb-meta">维护费 50 元/人</div></div></div>
     </div>
   </article>
 
@@ -375,20 +376,17 @@
       <div class="day-hd-row"><div class="day-num">D5<sup>/06</sup></div><div class="day-info"><div class="day-date">7月21日 周二</div><div class="day-city">玉龙雪山日</div></div></div>
       <div class="day-title">云杉坪+蓝月谷+印象丽江</div>
       <div class="day-route">⛰ 雪山 3360m · <b>高反预警</b></div>
-      <div class="chevron">▼</div>
     </div>
-    <div class="day-body">
-      <div class="day-wx snow"><span class="icon">❄️</span> 阴转小雨 <span class="sep">|</span> <span class="temp">古城 14-22°C · 雪山 -2-8°C</span> <span class="sep">|</span> 🧥 羽绒服必备</div>
-      <div class="day-warn"><span>⚠️</span><div><strong>高反预防</strong>提前 3 天红景天(D2 起),儿童减半。当天不洗头/不剧烈运动。氧气罐山下买 15-30 元(景区 60-100 元,差 3-4 倍)。山上 4-5 小时。</div></div>
-      <div class="tl">
-        <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">酒店早餐 + 红景天 + 巧克力</div><div class="meal-meta">7:00 前出门 · 务必吃饱</div></div></div>
-        <div class="tb"><div class="tb-time"><b>09:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【云杉坪】</span> 高山草甸 · "小瑞士"</div><div class="tb-meta">海拔 3360m · 2 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>高山草甸,云杉林围绕;雪山背景;牦牛在草甸上吃草</div></div></div>
-        <div class="tb"><div class="tb-time"><b>11:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【蓝月谷】</span> 雪山下的蓝宝石</div><div class="tb-meta">2.5 小时 · 电瓶车 50 元</div><div class="tb-detail kan"><span class="lbl">看什么</span>雪山下的蓝绿色湖泊,"小九寨"</div></div></div>
-        <div class="meal"><div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">Lunch · 自带</div><div class="meal-name">自带零食/巧克力/牛肉干/热水</div><div class="meal-meta">雪山简餐价高且难吃,自带最稳</div></div></div>
-        <div class="tb"><div class="tb-time"><b>14:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【印象丽江】</span> 实景演出(可跳过)</div><div class="tb-meta">280 元/人 · 1 小时</div></div></div>
-        <div class="tb"><div class="tb-time"><b>16:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【白沙古镇】</span> 雪山第一小镇</div><div class="tb-meta">2 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>抬头就是玉龙雪山;白沙壁画(明代纳西族)</div><div class="tb-detail wan"><span class="lbl">玩什么</span>东巴纸坊 50-100 元;街边小店逛</div><div class="tb-detail bilei"><span class="lbl">避雷</span>酒吧街不适合亲子;"普洱茶 9.9 包邮"别买</div></div></div>
-        <div class="meal"><div class="meal-ic di">D</div><div class="meal-body"><div class="meal-lbl">Dinner</div><div class="meal-name">⭐⭐ 阿婆情腊排骨(古城旗舰店)</div><div class="meal-meta">古城五一街 38 号 · 步行 10 分 · 07:00-24:00 · ¥70-100</div></div></div>
-      </div>
+    <div class="day-wx snow"><span class="icon">❄️</span> 阴转小雨 <span class="sep">|</span> <span class="temp">古城 14-22°C · 雪山 -2-8°C</span> <span class="sep">|</span> 🧥 羽绒服必备</div>
+    <div class="day-warn"><span>⚠️</span><div><strong>高反预防</strong>提前 3 天红景天(D2 起),儿童减半。当天不洗头/不剧烈运动。氧气罐山下买 15-30 元(景区 60-100 元,差 3-4 倍)。山上 4-5 小时。</div></div>
+    <div class="tl">
+      <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">酒店早餐 + 红景天 + 巧克力</div><div class="meal-meta">7:00 前出门 · 务必吃饱</div></div></div>
+      <div class="tb"><div class="tb-time"><b>09:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【云杉坪】</span> 高山草甸 · "小瑞士"</div><div class="tb-meta">海拔 3360m · 2 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>高山草甸,云杉林围绕;雪山背景;牦牛在草甸上吃草</div></div></div>
+      <div class="tb"><div class="tb-time"><b>11:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【蓝月谷】</span> 雪山下的蓝宝石</div><div class="tb-meta">2.5 小时 · 电瓶车 50 元</div><div class="tb-detail kan"><span class="lbl">看什么</span>雪山下的蓝绿色湖泊,"小九寨"</div></div></div>
+      <div class="meal"><div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">Lunch · 自带</div><div class="meal-name">自带零食/巧克力/牛肉干/热水</div><div class="meal-meta">雪山简餐价高且难吃,自带最稳</div></div></div>
+      <div class="tb"><div class="tb-time"><b>14:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【印象丽江】</span> 实景演出(可跳过)</div><div class="tb-meta">280 元/人 · 1 小时</div></div></div>
+      <div class="tb"><div class="tb-time"><b>16:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【白沙古镇】</span> 雪山第一小镇</div><div class="tb-meta">2 小时</div><div class="tb-detail kan"><span class="lbl">看什么</span>抬头就是玉龙雪山;白沙壁画(明代纳西族)</div><div class="tb-detail wan"><span class="lbl">玩什么</span>东巴纸坊 50-100 元;街边小店逛</div><div class="tb-detail bilei"><span class="lbl">避雷</span>酒吧街不适合亲子;"普洱茶 9.9 包邮"别买</div></div></div>
+      <div class="meal"><div class="meal-ic di">D</div><div class="meal-body"><div class="meal-lbl">Dinner</div><div class="meal-name">⭐⭐ 阿婆情腊排骨(古城旗舰店)</div><div class="meal-meta">古城五一街 38 号 · 步行 10 分 · 07:00-24:00 · ¥70-100</div></div></div>
     </div>
   </article>
 
@@ -397,20 +395,26 @@
       <div class="day-hd-row"><div class="day-num">D6<sup>/06</sup></div><div class="day-info"><div class="day-date">7月22日 周三</div><div class="day-city">送机</div></div></div>
       <div class="day-title">自由活动 → 束河 → 送机</div>
       <div class="day-route">🌊 三选一 → 束河 → ✈️ 2.5h 到机场</div>
-      <div class="chevron">▼</div>
     </div>
-    <div class="day-body">
-      <div class="day-wx"><span class="icon">☀️</span> 晴间多云 <span class="sep">|</span> <span class="temp">14-24°C</span> <span class="sep">|</span> ✈️ 送机日天气好</div>
-      <div class="tl">
-        <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">⭐ 88 号小吃店(兴仁店)</div><div class="meal-meta">古城五一街 88 号 · 步行 10-15 分 · 7-8 点后开 · ¥30-50 · 鸡豆凉粉</div></div></div>
-        <div class="tb"><div class="tb-time"><b>09:00</b></div><div class="tb-body"><div class="tb-title">【自由活动三选一】</div><div class="grid-2" style="margin-top:8px;"><div class="opt"><div class="opt-mark">A</div><div class="opt-name">清溪水库</div><div class="opt-body">车程 10 分 · 免费 · 直面玉龙雪山 · 草坪孩子可跑</div></div><div class="opt"><div class="opt-mark">B</div><div class="opt-name">忠义市场</div><div class="opt-body">车程 5 分 · 免费 · 原生农贸市场 · 9 点前最热闹</div></div></div></div></div>
-        <div class="meal"><div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">Lunch · 束河</div><div class="meal-name">⭐ 阿安酸奶 + 丽江粑粑</div><div class="meal-meta">束河古镇 · 轻食,赶飞机友好</div></div></div>
-        <div class="tb"><div class="tb-time"><b>13:30</b></div><div class="tb-body"><div class="tb-title">酒店取行李 → 出发机场</div></div></div>
-        <div class="tb"><div class="tb-time"><b>14:00</b></div><div class="tb-body"><div class="tb-title">✈️ 丽江三义机场送机</div><div class="tb-meta">预留 2.5 小时</div></div></div>
-      </div>
+    <div class="day-wx"><span class="icon">☀️</span> 晴间多云 <span class="sep">|</span> <span class="temp">14-24°C</span> <span class="sep">|</span> ✈️ 送机日天气好</div>
+    <div class="tl">
+      <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">⭐ 88 号小吃店(兴仁店)</div><div class="meal-meta">古城五一街 88 号 · 步行 10-15 分 · 7-8 点后开 · ¥30-50 · 鸡豆凉粉</div></div></div>
+      <div class="tb"><div class="tb-time"><b>09:00</b></div><div class="tb-body"><div class="tb-title">【自由活动三选一】</div><div class="grid-2" style="margin-top:8px;"><div class="opt"><div class="opt-mark">A</div><div class="opt-name">清溪水库</div><div class="opt-body">车程 10 分 · 免费 · 直面玉龙雪山 · 草坪孩子可跑</div></div><div class="opt"><div class="opt-mark">B</div><div class="opt-name">忠义市场</div><div class="opt-body">车程 5 分 · 免费 · 原生农贸市场 · 9 点前最热闹</div></div></div></div></div>
+      <div class="meal"><div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">Lunch · 束河</div><div class="meal-name">⭐ 阿安酸奶 + 丽江粑粑</div><div class="meal-meta">束河古镇 · 轻食,赶飞机友好</div></div></div>
+      <div class="tb"><div class="tb-time"><b>13:30</b></div><div class="tb-body"><div class="tb-title">酒店取行李 → 出发机场</div></div></div>
+      <div class="tb"><div class="tb-time"><b>14:00</b></div><div class="tb-body"><div class="tb-title">✈️ 丽江三义机场送机</div><div class="tb-meta">预留 2.5 小时</div></div></div>
     </div>
   </article>
 </main>
+
+<section class="sec">
+  <div class="sec-hd"><h2>饮食警告</h2></div>
+  <div class="warn-list">
+    <div class="warn-item"><div class="warn-title">⛔ 绝对禁止</div><div class="warn-body">生皮(大理白族传统生猪肉)、淡水鱼生(丽江虹鳟刺身)、傣族剁生/撒撇(生肉末)</div></div>
+    <div class="warn-item info"><div class="warn-title">⚠️ 必须警惕</div><div class="warn-body">野生菌必须煮透;过桥米线生配料家长烫熟;过辣菜点名"少辣";折耳根腥味大</div></div>
+    <div class="warn-item ok"><div class="warn-title">✅ 可以吃</div><div class="warn-body">昆虫类(竹虫/蜂蛹等)孩子可试;野生菌煮透后 7 月旺季</div></div>
+  </div>
+</section>
 
 <section class="sec">
   <div class="sec-hd"><h2>餐厅总表</h2><p>22 家店,营业时间已查证。临近出行请核对。</p></div>
@@ -462,11 +466,128 @@
 </section>
 
 <section class="sec">
-  <div class="sec-hd"><h2>饮食警告</h2></div>
-  <div class="warn-list">
-    <div class="warn-item"><div class="warn-title">⛔ 绝对禁止</div><div class="warn-body">生皮(大理白族传统生猪肉)、淡水鱼生(丽江虹鳟刺身)、傣族剁生/撒撇(生肉末)</div></div>
-    <div class="warn-item info"><div class="warn-title">⚠️ 必须警惕</div><div class="warn-body">野生菌必须煮透;过桥米线生配料家长烫熟;过辣菜点名"少辣";折耳根腥味大</div></div>
-    <div class="warn-item ok"><div class="warn-title">✅ 可以吃</div><div class="warn-body">昆虫类(竹虫/蜂蛹等)孩子可试;野生菌煮透后 7 月旺季</div></div>
+  <div class="sec-hd"><h2>当地特色购物清单</h2><p>避开古城主街高价店,选连锁或司机推荐</p></div>
+  <div class="shop-list">
+    <div class="shop-cat">
+      <h3>🍪 零食伴手礼</h3>
+      <div class="shop-item"><div><div class="shop-name">鲜花饼 <span class="badge">必买</span></div><div class="shop-desc">嘉华/潘祥记连锁店,现烤最好吃,保质期 15-30 天</div></div><div class="shop-price">¥30-60/盒</div></div>
+      <div class="shop-item"><div><div class="shop-name">牦牛肉干</div><div class="shop-desc">古城内多家,试吃再买,注意保质期</div></div><div class="shop-price">¥30-80/包</div></div>
+      <div class="shop-item"><div><div class="shop-name">丽江蜜饯/果脯</div><div class="shop-desc">古城内特产店,蜜饯酸甜,孩子喜欢</div></div><div class="shop-price">¥20-40/袋</div></div>
+      <div class="shop-item"><div><div class="shop-name">普洱茶</div><div class="shop-desc">警惕"9.9 包邮"廉价茶,真正好茶¥100-500/饼起</div></div><div class="shop-price">¥100-500/饼</div></div>
+      <div class="shop-item"><div><div class="shop-name">菌菇干货</div><div class="shop-desc">鸡枞菌、松茸等,忠义市场或正规干货店,比景区便宜 50%</div></div><div class="shop-price">¥50-200/袋</div></div>
+    </div>
+    <div class="shop-cat">
+      <h3>🎨 手工艺品</h3>
+      <div class="shop-item"><div><div class="shop-name">扎染布艺 <span class="badge">推荐</span></div><div class="shop-desc">周城村/喜洲扎染,围裙、手帕、衣服,比古城便宜 30-50%</div></div><div class="shop-price">¥30-200/件</div></div>
+      <div class="shop-item"><div><div class="shop-name">东巴纸工艺品</div><div class="shop-desc">白沙古镇东巴纸坊,笔记本、灯笼、明信片,孩子可参与做纸体验</div></div><div class="shop-price">¥30-150/件</div></div>
+      <div class="shop-item"><div><div class="shop-name">纳西刺绣</div><div class="shop-desc">小件刺绣,白沙古镇/丽江古城内,图案精美</div></div><div class="shop-price">¥50-300/件</div></div>
+      <div class="shop-item"><div><div class="shop-name">银饰 ⚠️</div><div class="shop-desc">鹤庆银匠真品,游客店多为合金,不懂行别买</div></div><div class="shop-price">¥100-800</div></div>
+    </div>
+    <div class="shop-cat">
+      <h3>📍 购买地点建议</h3>
+      <div class="shop-item"><div><div class="shop-name">嘉华/潘祥记连锁店</div><div class="shop-desc">三城都有,鲜花饼首选,连锁明码标价</div></div><div class="shop-price"></div></div>
+      <div class="shop-item"><div><div class="shop-name">忠义市场(丽江)</div><div class="shop-desc">D6 自由活动可选,买菌菇干货、水果、山货,比景区便宜一半</div></div><div class="shop-price"></div></div>
+      <div class="shop-item"><div><div class="shop-name">周城扎染(大理)</div><div class="shop-desc">喜洲附近,小村子,扎染作坊林立,比古城便宜一半</div></div><div class="shop-price"></div></div>
+      <div class="shop-item"><div><div class="shop-name">白沙古镇(丽江)</div><div class="shop-desc">D5 雪山下来顺路,东巴纸坊、纳西刺绣,比大研古城安静</div></div><div class="shop-price"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-hd"><h2>出行物品清单</h2><p>出发前一晚对着打勾,分"在家备好"和"到当地买"</p></div>
+  <div class="pack">
+    <div class="pack-block">
+      <h3>🧳 出发前打包(在家备好)</h3>
+      <div class="pack-grid">
+        <div class="pack-item"><span class="lbl">👕 衣物</span>长袖 T 恤×3、薄外套、抓绒/轻羽绒、防滑运动鞋、雨衣、睡衣</div>
+        <div class="pack-item"><span class="lbl">📄 证件</span>身份证(必带)、孩子身份证、手机、充电宝、数据线</div>
+        <div class="pack-item"><span class="lbl">🧴 洗漱</span>防晒霜 SPF50+、帽子、墨镜、防蚊喷雾、纸巾、湿巾</div>
+        <div class="pack-item"><span class="lbl">💊 药品</span>感冒药、退烧药、儿童肠胃药、创可贴、碘伏、红景天(儿童减半)、晕车药</div>
+        <div class="pack-item"><span class="lbl">🎒 装备</span>保温杯(雪山热水)、雨伞、充电宝 2 个、带拉链小包(随身证件)</div>
+        <div class="pack-item"><span class="lbl">🍫 食物</span>能量棒/巧克力、牛肉干、话梅(晕车)、小零食</div>
+        <div class="pack-item"><span class="lbl">🧒 儿童</span>备用长袖、拖鞋、玩具/绘本(车上无聊)、小背包(自己背水壶)</div>
+        <div class="pack-item"><span class="lbl">💰 现金</span>500 元备用(古城部分老店只收现金),微信/支付宝普及</div>
+      </div>
+    </div>
+    <div class="pack-block">
+      <h3>🏪 到当地买 <span class="tag">重要</span></h3>
+      <div class="pack-item" style="grid-column:1/-1"><span class="lbl">D1 抵昆明后买</span>新鲜水果、零食、矿泉水(酒店备)</div>
+      <div class="pack-item" style="grid-column:1/-1; margin-top:6px;"><span class="lbl">D4 抵丽江后买 ⭐</span>氧气罐 2 瓶(古城外药店 15-30 元/瓶)、巧克力、红牛</div>
+      <div class="pack-note">⚠️ 氧气罐不能上动车/飞机,到丽江后买,上雪山用,下山后送人或留酒店。</div>
+    </div>
+    <div class="pack-block">
+      <h3>🏔️ 高反 + 氧气罐特别说明</h3>
+      <div class="pack-item" style="grid-column:1/-1"><span class="lbl">高反预防</span>D2 起开始吃红景天(儿童剂量减半);D5 前一晚不洗头;山上不跑不跳;多喝热水</div>
+      <div class="pack-item" style="grid-column:1/-1; margin-top:6px;"><span class="lbl">氧气罐方案</span>D4 到丽江后让司机带去古城外药店买,一大一小 2 瓶够用,约 40-60 元。景区卖 60-100 元,差 3-4 倍。</div>
+      <div class="pack-item" style="grid-column:1/-1; margin-top:6px;"><span class="lbl">紧急预案</span>如果 D4 抵丽江当晚孩子就出现明显头痛/嗜睡/乏力,说明孩子对 2400m 海拔都不适应,D5 需调整:取消玉龙雪山,改为束河古镇+白沙古镇慢节奏游;或只去蓝月谷(不坐大索道到 3360m)。</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-hd"><h2>通用注意事项</h2><p>40 条,分 8 大类,出行前通读</p></div>
+  <div class="tips">
+    <div class="tip-block">
+      <h3>🌤️ 天气与装备</h3>
+      <ul class="tip-list">
+        <li>7 月云南雨季尾巴,日均 <b>16-25°C</b>,雨水多但多为阵雨</li>
+        <li>每天带伞 + 雨衣,尤其玉龙雪山</li>
+        <li>白天长袖 T 恤+薄外套;早晚加抓绒/轻羽绒</li>
+        <li>玉龙雪山:自带羽绒服或租借(50-80 元)</li>
+        <li>鞋子:防滑运动鞋(雨季石板路/木栈道湿滑)</li>
+        <li>防晒:紫外线强,SPF 50+,孩子尤其注意防晒伤</li>
+        <li>防蚊:7 月蚊虫多,尤其翠湖、捞鱼河湿地</li>
+      </ul>
+    </div>
+    <div class="tip-block">
+      <h3>🏔️ 高反预防(玉龙雪山 D5)</h3>
+      <ul class="tip-list">
+        <li><b>提前 3 天红景天:</b>7-18 起服用,儿童剂量减半</li>
+        <li><b>当天禁忌:</b>不洗头、不剧烈运动、不奔跑、不饮酒、不吃太饱、多喝热水</li>
+        <li><b>氧气罐:</b>山下药店 15-30 元/瓶,景区 60-100 元。一大一小 2 瓶够用</li>
+        <li>儿童高反症状:头痛、嗜睡、呕吐、嘴唇发紫,立即下山</li>
+        <li>山上停留 4-5 小时足够,不去冰川公园大索道(4506m)</li>
+      </ul>
+    </div>
+    <div class="tip-block">
+      <h3>🍽️ 儿童安全与餐饮</h3>
+      <ul class="tip-list">
+        <li>餐前警告清单打印交给司机:不辣、不吃生肉、不吃淡水鱼生、菌子必须熟透</li>
+        <li>野生菌:必须煮透,选正规餐厅,不选路边"杂菌火锅"小摊</li>
+        <li>生食严格禁止:生皮、剁生、撒撇、丽江虹鳟刺身(淡水鱼寄生虫风险极高)</li>
+        <li>过桥米线生配料(蛋、肉)家长代为烫熟</li>
+        <li>儿童体力:每天不超过 2 个核心景点,备零食/能量棒</li>
+      </ul>
+    </div>
+    <div class="tip-block">
+      <h3>🚗 交通与司机</h3>
+      <ul class="tip-list">
+        <li>包车司机可信任推荐,但与本攻略交叉验证,价格先问 2-3 家</li>
+        <li>昆明→大理动车 D3960(17:42-19:50),提前买票,旺季紧张</li>
+        <li>大理→丽江包车约 2.5 小时;丽江→机场 30-45 分钟</li>
+        <li>出发提前 2.5 小时到机场,接机师傅举牌接</li>
+        <li>儿童晕车:山路多,坐前排、备晕车药、话梅</li>
+      </ul>
+    </div>
+    <div class="tip-block">
+      <h3>🏨 住宿注意事项</h3>
+      <ul class="tip-list">
+        <li>丽江古城维护费 50 元/人,通常客栈代收,主动索取发票</li>
+        <li>拖箱子走石板路累,选有电梯的客栈</li>
+        <li>D6 退房后行李寄存客栈前台,贵重物品随身带</li>
+      </ul>
+    </div>
+    <div class="tip-block">
+      <h3>⛔ 避雷清单</h3>
+      <ul class="tip-list">
+        <li><span class="warn-t">拉市海骑马 ⛔</span> 低价招揽+坐地起价,套路深,坚决拒绝</li>
+        <li><span class="warn-t">古城主街餐厅 ⛔</span> 价格虚高+味道一般,选本地人推荐店</li>
+        <li><span class="warn-t">9.9 包邮普洱茶 ⛔</span> 真正好茶 100-500 元/饼起</li>
+        <li><span class="warn-t">银器店 ⛔</span> 游客店多为合金,不懂行别买</li>
+        <li><span class="warn-t">私人博物馆 ⛔</span> 老街/古城内收费陷阱</li>
+        <li><span class="warn-t">强行推销 ⛔</span> 茶叶店、银器店,礼貌拒绝走开</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -478,51 +599,17 @@
 
 <script>
 (function() {
-  var days = document.querySelectorAll('.day');
   var pills = document.querySelectorAll('.day-pill');
+  var days = document.querySelectorAll('.day');
 
-  function closeAll(exceptIdx) {
-    days.forEach(function(d, i) {
-      if (i === exceptIdx) return;
-      d.classList.remove('expanded');
-    });
-    pills.forEach(function(p, i) {
-      if (i === exceptIdx) return;
-      p.classList.remove('active');
-    });
-  }
-
-  function openDay(idx) {
-    days[idx].classList.add('expanded');
-    pills[idx].classList.add('active');
-    // Scroll pill into view in the nav
-    pills[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-  }
-
-  // Click header to toggle accordion
-  days.forEach(function(day, i) {
-    var hd = day.querySelector('.day-hd');
-    hd.addEventListener('click', function(e) {
-      // Don't toggle if user clicked a link
-      if (e.target.tagName === 'A') return;
-      var isOpen = day.classList.contains('expanded');
-      closeAll(-1);
-      if (!isOpen) {
-        openDay(i);
-      }
-    });
-  });
-
-  // Click nav pill to scroll & expand
   pills.forEach(function(pill, i) {
     pill.addEventListener('click', function() {
-      closeAll(-1);
-      openDay(i);
       days[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      pills.forEach(function(p) { p.classList.remove('active'); });
+      pill.classList.add('active');
     });
   });
 
-  // IntersectionObserver: highlight active pill on scroll
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
@@ -534,9 +621,6 @@
   }, { threshold: 0.2, rootMargin: '-80px 0px -40% 0px' });
 
   days.forEach(function(d) { observer.observe(d); });
-
-  // Open D1 by default
-  openDay(0);
 })();
 </script>
 
