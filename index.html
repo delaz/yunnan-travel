@@ -41,8 +41,8 @@
     justify-content: flex-end;
     padding: 20px 16px 32px;
     padding-top: calc(60px + env(safe-area-inset-top));
-    background: linear-gradient(180deg, rgba(26,58,42,.15) 0%, rgba(26,58,42,.85) 70%, var(--forest) 100%),
-                url('https://images.unsplash.com/photo-1528164344705-47542687000d?w=800&q=80') center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(26,58,42,.1) 0%, rgba(26,58,42,.8) 60%, var(--forest) 100%),
+                url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80') center/cover no-repeat;
     color: white;
     overflow: hidden;
   }
@@ -217,11 +217,6 @@
   .opt-name { font-size: 13px; font-weight: 700; color: var(--ink); margin-top: 4px; }
   .opt-body { font-size: 11px; color: var(--ink-soft); margin-top: 6px; line-height: 1.55; }
 
-  .img-strip { margin: 0 12px 16px; height: 140px; border-radius: 14px; background-size: cover; background-position: center; }
-  .img-strip.kunming { background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80'); }
-  .img-strip.dali { background-image: url('https://images.unsplash.com/photo-1559827291-a6e1e22b2b9b?w=600&q=80'); }
-  .img-strip.lijiang { background-image: url('https://images.unsplash.com/photo-1528164344705-47542687000d?w=600&q=80'); }
-
   /* ── 物品清单 ── */
   .pack { padding: 0 12px; }
   .pack-block { background: var(--bg-card); border-radius: 14px; padding: 16px; margin-bottom: 14px; border: 1px solid var(--line); }
@@ -280,16 +275,14 @@
     <span>⛰ 3360m</span>
   </div>
   <div class="day-nav" id="dayNav">
-    <button class="day-pill" data-day="0">D1 <small>7/17</small></button>
-    <button class="day-pill" data-day="1">D2 <small>7/18</small></button>
-    <button class="day-pill" data-day="2">D3 <small>7/19</small></button>
-    <button class="day-pill" data-day="3">D4 <small>7/20</small></button>
-    <button class="day-pill" data-day="4">D5 <small>7/21</small></button>
-    <button class="day-pill" data-day="5">D6 <small>7/22</small></button>
+    <button class="day-pill" data-target="day-0">D1-D3 <small>昆明·大理</small></button>
+    <button class="day-pill" data-target="day-3">D4-D6 <small>丽江</small></button>
+    <button class="day-pill" data-target="restaurants">🍴 餐厅</button>
+    <button class="day-pill" data-target="shopping">🛒 购物</button>
+    <button class="day-pill" data-target="packing">🎒 准备</button>
+    <button class="day-pill" data-target="tips">⚠️ 提醒</button>
   </div>
 </div>
-
-<div class="img-strip kunming"></div>
 
 <main class="days">
 
@@ -332,8 +325,6 @@
     </div>
   </article>
 
-  <div class="img-strip dali"></div>
-
   <article class="day" id="day-2">
     <div class="day-hd">
       <div class="day-hd-row"><div class="day-num">D3<sup>/06</sup></div><div class="day-info"><div class="day-date">7月19日 周日</div><div class="day-city">大理深度</div></div></div>
@@ -369,8 +360,6 @@
     </div>
   </article>
 
-  <div class="img-strip lijiang"></div>
-
   <article class="day" id="day-4">
     <div class="day-hd">
       <div class="day-hd-row"><div class="day-num">D5<sup>/06</sup></div><div class="day-info"><div class="day-date">7月21日 周二</div><div class="day-city">玉龙雪山日</div></div></div>
@@ -399,7 +388,7 @@
     <div class="day-wx"><span class="icon">☀️</span> 晴间多云 <span class="sep">|</span> <span class="temp">14-24°C</span> <span class="sep">|</span> ✈️ 送机日天气好</div>
     <div class="tl">
       <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">⭐ 88 号小吃店(兴仁店)</div><div class="meal-meta">古城五一街 88 号 · 步行 10-15 分 · 7-8 点后开 · ¥30-50 · 鸡豆凉粉</div></div></div>
-      <div class="tb"><div class="tb-time"><b>09:00</b></div><div class="tb-body"><div class="tb-title">【自由活动三选一】</div><div class="grid-2" style="margin-top:8px;"><div class="opt"><div class="opt-mark">A</div><div class="opt-name">清溪水库</div><div class="opt-body">车程 10 分 · 免费 · 直面玉龙雪山 · 草坪孩子可跑</div></div><div class="opt"><div class="opt-mark">B</div><div class="opt-name">忠义市场</div><div class="opt-body">车程 5 分 · 免费 · 原生农贸市场 · 9 点前最热闹</div></div></div></div></div>
+      <div class="tb"><div class="tb-time"><b>09:00</b></div><div class="tb-body"><div class="tb-title">【自由活动三选一】</div><div style="margin-top:8px;display:flex;flex-direction:column;gap:8px;"><div class="opt"><div class="opt-mark">A</div><div class="opt-name">清溪水库 ⭐ 最推荐</div><div class="opt-body">车程 10 分 · 免费 · 直面玉龙雪山 · 草坪孩子可跑 · 纯自然</div></div><div class="opt"><div class="opt-mark">B</div><div class="opt-name">忠义市场</div><div class="opt-body">车程 5 分 · 免费 · 本地农贸市场 · 买菌菇干货/水果 · 9 点前最热闹</div></div><div class="opt"><div class="opt-mark">C</div><div class="opt-name">花马街 & 红太阳广场</div><div class="opt-body">步行可达 · 纳西特色餐馆 · 买鲜花饼/伴手礼 · 轻松闲逛</div></div></div></div></div>
       <div class="meal"><div class="meal-ic lu">L</div><div class="meal-body"><div class="meal-lbl">Lunch · 束河</div><div class="meal-name">⭐ 阿安酸奶 + 丽江粑粑</div><div class="meal-meta">束河古镇 · 轻食,赶飞机友好</div></div></div>
       <div class="tb"><div class="tb-time"><b>13:30</b></div><div class="tb-body"><div class="tb-title">酒店取行李 → 出发机场</div></div></div>
       <div class="tb"><div class="tb-time"><b>14:00</b></div><div class="tb-body"><div class="tb-title">✈️ 丽江三义机场送机</div><div class="tb-meta">预留 2.5 小时</div></div></div>
@@ -407,16 +396,7 @@
   </article>
 </main>
 
-<section class="sec">
-  <div class="sec-hd"><h2>饮食警告</h2></div>
-  <div class="warn-list">
-    <div class="warn-item"><div class="warn-title">⛔ 绝对禁止</div><div class="warn-body">生皮(大理白族传统生猪肉)、淡水鱼生(丽江虹鳟刺身)、傣族剁生/撒撇(生肉末)</div></div>
-    <div class="warn-item info"><div class="warn-title">⚠️ 必须警惕</div><div class="warn-body">野生菌必须煮透;过桥米线生配料家长烫熟;过辣菜点名"少辣";折耳根腥味大</div></div>
-    <div class="warn-item ok"><div class="warn-title">✅ 可以吃</div><div class="warn-body">昆虫类(竹虫/蜂蛹等)孩子可试;野生菌煮透后 7 月旺季</div></div>
-  </div>
-</section>
-
-<section class="sec">
+<section class="sec" id="restaurants">
   <div class="sec-hd"><h2>餐厅总表</h2><p>22 家店,营业时间已查证。临近出行请核对。</p></div>
   <div class="city-block">
     <div class="city-hd"><div class="mark">A</div><div><div class="name">昆明</div><div class="sub">翠湖宾馆 · 7+2 家</div></div></div>
@@ -465,7 +445,7 @@
   </div>
 </section>
 
-<section class="sec">
+<section class="sec" id="shopping">
   <div class="sec-hd"><h2>当地特色购物清单</h2><p>避开古城主街高价店,选连锁或司机推荐</p></div>
   <div class="shop-list">
     <div class="shop-cat">
@@ -493,7 +473,7 @@
   </div>
 </section>
 
-<section class="sec">
+<section class="sec" id="packing">
   <div class="sec-hd"><h2>出行物品清单</h2><p>出发前一晚对着打勾,分"在家备好"和"到当地买"</p></div>
   <div class="pack">
     <div class="pack-block">
@@ -524,8 +504,7 @@
   </div>
 </section>
 
-<section class="sec">
-  <div class="sec-hd"><h2>通用注意事项</h2><p>40 条,分 8 大类,出行前通读</p></div>
+<section class="sec" id="tips"><p>40 条,分 8 大类,出行前通读</p></div>
   <div class="tips">
     <div class="tip-block">
       <h3>🌤️ 天气与装备</h3>
@@ -600,27 +579,31 @@
 <script>
 (function() {
   var pills = document.querySelectorAll('.day-pill');
-  var days = document.querySelectorAll('.day');
 
-  pills.forEach(function(pill, i) {
+  pills.forEach(function(pill) {
     pill.addEventListener('click', function() {
-      days[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var target = document.getElementById(this.dataset.target);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
       pills.forEach(function(p) { p.classList.remove('active'); });
-      pill.classList.add('active');
+      this.classList.add('active');
     });
   });
 
+  var sections = document.querySelectorAll('.day, #restaurants, #shopping, #packing, #tips');
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
-        var idx = Array.from(days).indexOf(entry.target);
+        var id = entry.target.id;
         pills.forEach(function(p) { p.classList.remove('active'); });
-        if (pills[idx]) pills[idx].classList.add('active');
+        var match = document.querySelector('.day-pill[data-target="' + id + '"]');
+        if (match) match.classList.add('active');
       }
     });
   }, { threshold: 0.2, rootMargin: '-80px 0px -40% 0px' });
 
-  days.forEach(function(d) { observer.observe(d); });
+  sections.forEach(function(s) { observer.observe(s); });
 })();
 </script>
 
