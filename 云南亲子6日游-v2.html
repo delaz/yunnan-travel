@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>云南亲子 6 日游 · 7月17-22日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f1e8;
+    --bg-elevated: #fbf6ec;
+    --bg-card: #ffffff;
+    --ink: #1a1814;
+    --ink-soft: #5a544a;
+    --ink-muted: #8c8576;
+    --line: #e8dfcb;
+    --line-soft: #f0e8d2;
+    --accent: #b6553a;
+    --accent-deep: #8a3f2a;
+    --gold: #c89b4c;
+    --teal: #2c5e5e;
+    --warn: #c00000;
+    --warn-bg: #fdecec;
+    --good: #2e7d32;
+    --good-bg: #e8f5e9;
+    --info: #1a4d7a;
+    --info-bg: #e3f2fd;
+    --radius-s: 6px;
+    --radius-m: 12px;
+    --radius-l: 20px;
+    --radius-pill: 999px;
+    --shadow-s: 0 1px 2px rgba(26,24,20,.04), 0 2px 8px rgba(26,24,20,.04);
+    --shadow-m: 0 2px 6px rgba(26,24,20,.06), 0 12px 28px rgba(26,24,20,.08);
+    --shadow-l: 0 4px 12px rgba(26,24,20,.08), 0 24px 60px rgba(26,24,20,.10);
+    --font-sans: 'Plus Jakarta Sans', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+    --font-serif: 'Noto Serif SC', 'Source Han Serif SC', serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--ink);
+    line-height: 1.6;
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(200,155,76,.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(182,85,58,.06) 0%, transparent 35%);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent); color: white; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  /* ============= HERO ============= */
+  .hero {
+    position: relative;
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 80px;
+    padding: 80px 0 100px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: -200px; bottom: 0;
+    width: 600px;
+    background: radial-gradient(circle at center, rgba(200,155,76,.18), transparent 65%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0, transparent 119px, rgba(26,24,20,.04) 120px, transparent 121px),
+      repeating-linear-gradient(90deg, transparent 0, transparent 119px, rgba(26,24,20,.04) 120px, transparent 121px);
+    opacity: .25;
+    pointer-events: none;
+  }
+  .hero-left { position: relative; z-index: 2; }
+  .hero-right { position: relative; z-index: 2; }
+  .hero-stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-radius: var(--radius-pill);
+    margin-bottom: 32px;
+  }
+  .hero-stamp::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+  }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(48px, 7vw, 92px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 32px;
+    font-weight: 700;
+  }
+  .hero h1 .accent {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 700;
+  }
+  .hero-sub {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin-bottom: 40px;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .hero-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-pill);
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 32px;
+    background: var(--ink);
+    color: var(--bg);
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+    box-shadow: var(--shadow-m);
+  }
+  .hero-cta:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-l);
+  }
+  .hero-cta-arrow {
+    width: 20px; height: 20px;
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 12h14M13 5l7 7-7 7' stroke='currentColor' stroke-width='2' fill='none'/></svg>") no-repeat center;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 12h14M13 5l7 7-7 7' stroke='currentColor' stroke-width='2' fill='none'/></svg>") no-repeat center;
+  }
+  .hero-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-l);
+    padding: 28px;
+    box-shadow: var(--shadow-l);
+  }
+  .hero-card-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 18px;
+  }
+  .hero-stat {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .hero-stat-item {
+    border-top: 2px solid var(--ink);
+    padding-top: 12px;
+  }
+  .hero-stat-num {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .hero-stat-num span {
+    font-size: 16px;
+    color: var(--ink-soft);
+    font-weight: 400;
+    font-family: var(--font-sans);
+    margin-left: 2px;
+  }
+  .hero-stat-lbl {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .hero-weather-strip {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: var(--radius-m);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    flex-wrap: wrap;
+  }
+  .hero-weather-strip strong { color: var(--gold); }
+
+  /* ============= NAV ============= */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(246,241,232,.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+  }
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ============= SECTIONS ============= */
+  section { padding: 100px 0; }
+  .sec-head {
+    margin-bottom: 60px;
+  }
+  .sec-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+  .sec-title {
+    font-family: var(--font-serif);
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    font-weight: 700;
+    max-width: 800px;
+  }
+  .sec-sub {
+    margin-top: 16px;
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    line-height: 1.6;
+  }
+
+  /* ============= DAY CARD ============= */
+  .day-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-l);
+    padding: 48px;
+    margin-bottom: 80px;
+    box-shadow: var(--shadow-s);
+    position: relative;
+    overflow: hidden;
+  }
+  .day-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+  }
+  .day-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .day-num {
+    font-family: var(--font-serif);
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .day-num sup {
+    font-size: 18px;
+    color: var(--ink-muted);
+    font-weight: 400;
+    margin-left: 2px;
+  }
+  .day-title {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .day-route {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+  }
+  .day-route b { color: var(--accent); font-weight: 600; }
+
+  .day-weather {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-radius: var(--radius-m);
+    margin-bottom: 32px;
+    font-size: 14px;
+    color: #0d47a1;
+  }
+  .day-weather .icon { font-size: 22px; }
+  .day-weather .temp { font-weight: 700; font-size: 16px; }
+  .day-weather .sep { color: rgba(13,71,161,.3); }
+  .day-weather.d5 { background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%); }
+  .day-weather.d5 .temp { color: #01579b; }
+
+  /* ============= TIMELINE ============= */
+  .timeline {
+    position: relative;
+    padding-left: 100px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 36px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--line);
+  }
+  .tb {
+    position: relative;
+    padding-bottom: 32px;
+  }
+  .tb:last-child { padding-bottom: 0; }
+  .tb-time {
+    position: absolute;
+    left: -100px;
+    top: 0;
+    width: 80px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-muted);
+    text-align: right;
+    padding-top: 4px;
+  }
+  .tb-time b { color: var(--ink); font-weight: 600; }
+  .tb::before {
+    content: '';
+    position: absolute;
+    left: -71px;
+    top: 10px;
+    width: 11px;
+    height: 11px;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+  }
+  .tb-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .tb-title .spot {
+    background: linear-gradient(180deg, transparent 60%, rgba(200,155,76,.35) 60%);
+    padding: 0 2px;
+  }
+  .tb-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+  .tb-detail {
+    background: var(--bg-elevated);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    border-radius: 0 var(--radius-m) var(--radius-m) 0;
+    margin: 10px 0;
+  }
+  .tb-detail-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .tb-detail.kan { border-left-color: var(--teal); }
+  .tb-detail.kan .tb-detail-label { color: var(--teal); }
+  .tb-detail.bilei { border-left-color: var(--warn); background: var(--warn-bg); }
+  .tb-detail.bilei .tb-detail-label { color: var(--warn); }
+
+  /* ============= MEAL ============= */
+  .meal {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 16px;
+    padding: 18px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-m);
+    margin: 12px 0;
+    transition: all 0.3s;
+  }
+  .meal:hover {
+    border-color: var(--accent);
+    transform: translateX(4px);
+  }
+  .meal-icon {
+    width: 48px; height: 48px;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+  }
+  .meal-icon.bf { background: #d4a017; }
+  .meal-icon.lu { background: var(--accent); }
+  .meal-icon.di { background: var(--teal); }
+  .meal-icon.sn { background: #6a4c93; }
+  .meal-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 4px;
+  }
+  .meal-name {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .meal-meta {
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .meal-stars {
+    color: var(--accent);
+    margin-left: 4px;
+  }
+
+  /* ============= WARNING BOX ============= */
+  .warn-box {
+    background: var(--warn-bg);
+    border: 1px solid rgba(192,0,0,.2);
+    border-left: 4px solid var(--warn);
+    border-radius: var(--radius-m);
+    padding: 24px 28px;
+    margin: 16px 0;
+  }
+  .warn-box-title {
+    font-weight: 700;
+    color: var(--warn);
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .warn-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .warn-box li {
+    padding: 6px 0;
+    color: var(--ink-soft);
+    font-size: 14px;
+    position: relative;
+    padding-left: 20px;
+  }
+  .warn-box li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--warn);
+    font-weight: 700;
+  }
+  .warn-box li strong { color: var(--warn); }
+
+  .info-box {
+    background: var(--info-bg);
+    border: 1px solid rgba(26,77,122,.2);
+    border-left: 4px solid var(--info);
+    border-radius: var(--radius-m);
+    padding: 18px 22px;
+    margin: 16px 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  /* ============= CITY HEADER ============= */
+  .city-head {
+    display: flex;
+    align-items: end;
+    gap: 32px;
+    margin: 80px 0 40px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .city-num {
+    font-family: var(--font-serif);
+    font-size: 96px;
+    line-height: 0.85;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+  }
+  .city-info { flex: 1; }
+  .city-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+  }
+  .city-name {
+    font-family: var(--font-serif);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .city-en {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+  }
+  .city-count {
+    text-align: right;
+  }
+  .city-count-num {
+    font-family: var(--font-serif);
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .city-count-lbl {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+
+  /* ============= TABLE ============= */
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    font-size: 14px;
+  }
+  thead {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  th {
+    padding: 14px 16px;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--ink);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--bg-elevated); }
+  .subsection-head {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 32px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .subsection-head::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: var(--radius-pill);
+    font-size: 11px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    background: var(--ink);
+    color: var(--bg);
+    vertical-align: middle;
+  }
+  .badge-warn { background: var(--warn); }
+  .badge-fancy { background: var(--gold); color: var(--ink); }
+  .badge-local { background: var(--teal); }
+
+  /* ============= GRID LISTS ============= */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .tip {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-m);
+    padding: 24px;
+    transition: all 0.3s;
+  }
+  .tip:hover { transform: translateY(-4px); box-shadow: var(--shadow-m); border-color: var(--accent); }
+  .tip-num {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .tip-title {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .tip-body {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ============= FOOTER ============= */
+  footer {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 60px 0 30px;
+    margin-top: 100px;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+  }
+  .foot-brand {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .foot-brand em { color: var(--gold); font-style: italic; }
+  .foot-tag {
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 360px;
+  }
+  .foot-col h4 {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li { padding: 4px 0; font-size: 14px; }
+  .foot-col a { color: var(--bg); text-decoration: none; opacity: 0.7; }
+  .foot-col a:hover { opacity: 1; }
+  .foot-bottom {
+    border-top: 1px solid rgba(246,241,232,.15);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-family: var(--font-mono);
+  }
+
+  /* ============= RESPONSIVE ============= */
+  @media (max-width: 900px) {
+    .wrap { padding: 0 20px; }
+    .hero { grid-template-columns: 1fr; min-height: auto; padding: 60px 0; gap: 40px; }
+    .hero h1 { font-size: 48px; }
+    .nav-links { display: none; }
+    .day-card { padding: 28px 20px; }
+    .timeline { padding-left: 60px; }
+    .timeline::before { left: 16px; }
+    .tb-time { left: -60px; width: 50px; }
+    .tb::before { left: -51px; }
+    .day-head { grid-template-columns: 1fr; gap: 12px; }
+    .day-num { font-size: 36px; }
+    .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    .city-head { flex-direction: column; align-items: start; }
+    .city-num { font-size: 64px; }
+    .foot-grid { grid-template-columns: 1fr; gap: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============= NAV ============= -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="nav-logo">Yunnan<em>.</em></a>
+    <ul class="nav-links">
+      <li><a href="#overview">总览</a></li>
+      <li><a href="#day1">D1-D3</a></li>
+      <li><a href="#day4">D4-D6</a></li>
+      <li><a href="#food">餐厅</a></li>
+      <li><a href="#notes">须知</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============= HERO ============= -->
+<section class="hero" id="top">
+  <div class="wrap" style="display: contents;">
+    <div class="hero-left">
+      <div class="hero-stamp">Yunnan Family · 7月限定</div>
+      <h1>三个城市<br><span class="accent">六日时光</span><br>一家人慢慢走</h1>
+      <p class="hero-sub">昆明、大理、丽江,十二岁孩子能走能看能吃的私人团行程。每家店都亲自验证,每个景点都标好「看什么、玩什么、避雷」。</p>
+      <div class="hero-meta">
+        <span class="hero-meta-item">📅 7月17-22日</span>
+        <span class="hero-meta-item">👨‍👩‍👧 3大2小</span>
+        <span class="hero-meta-item">🚐 7座包车</span>
+        <span class="hero-meta-item">⛰ 海拔3360m</span>
+      </div>
+      <a href="#day1" class="hero-cta">看行程 <span class="hero-cta-arrow"></span></a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hero-card-label">Quick Facts</div>
+        <div class="hero-stat">
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">3<span>城</span></div>
+            <div class="hero-stat-lbl">昆明 · 大理 · 丽江</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">6<span>天</span></div>
+            <div class="hero-stat-lbl">每日不超过 2 核心</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">22<span>店</span></div>
+            <div class="hero-stat-lbl">含营业时间核对</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">16+<span>景</span></div>
+            <div class="hero-stat-lbl">看玩避三件套</div>
+          </div>
+        </div>
+        <div class="hero-weather-strip">
+          <span>🌦 <strong>7月雨季</strong></span>
+          <span>·</span>
+          <span>三城日均 16-25°C</span>
+          <span>·</span>
+          <span>多阵雨,带伞</span>
+          <span>·</span>
+          <span>雪山 -2-8°C</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 总览 ============= -->
+<section id="overview" style="background: var(--bg-elevated);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">Section 01 — Overview</div>
+      <h2 class="sec-title">六日总览</h2>
+      <p class="sec-sub">跨三城,从高原湖泊到苍山洱海,再到玉龙雪山。每个城市都按"看什么 / 玩什么 / 避雷"来排。</p>
+    </div>
+    <div class="grid-3">
+      <div class="tip">
+        <div class="tip-num">D1</div>
+        <div class="tip-title">抵达昆明 + citywalk</div>
+        <div class="tip-body">老街、翠湖、陆军讲武堂、黄公东街,最后翠府黑珍珠一钻晚餐。</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">D2</div>
+        <div class="tip-title">西山+捞鱼河→大理</div>
+        <div class="tip-body">龙门石窟俯瞰滇池,水杉林玻璃船,动车 19:50 抵大理,富源脆皮猪脚。</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">D3</div>
+        <div class="tip-title">大理深度</div>
+        <div class="tip-body">古城、磻溪 S 湾骑行、喜洲麦田小火车+扎染,岛七白族人家午餐。</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">D4</div>
+        <div class="tip-title">理想邦+双廊→丽江</div>
+        <div class="tip-body">蓝白小镇拍照,双廊沿途下关美食,阿婆情腊排骨古城旗舰店。</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">D5</div>
+        <div class="tip-title">玉龙雪山</div>
+        <div class="tip-body">云杉坪 3360m、蓝月谷、印象丽江(可跳)、白沙,雪山自备午餐。</div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">D6</div>
+        <div class="tip-title">自由活动+送机</div>
+        <div class="tip-body">清溪水库 / 忠义市场 / 花马街 三选一,88 号小吃店早餐,束河午餐。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= D1 ============= -->
+<div class="wrap" id="day1">
+  <div class="city-head">
+    <div class="city-num">01</div>
+    <div class="city-info">
+      <div class="city-label">Day 1 / Kunming</div>
+      <div class="city-name">抵达昆明 + 自由 citywalk</div>
+      <div class="city-en">7.17 Friday · 翠湖宾馆</div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-num">D1<sup>/06</sup></div>
+      <div>
+        <div class="day-title">7-17 周五 · 抵达昆明 + citywalk</div>
+        <div class="day-route">接机 → <b>翠湖宾馆</b> · 中午到 · 下午 4 站 · 晚翠府</div>
+      </div>
+    </div>
+
+    <div class="day-weather">
+      <span class="icon">🌦</span>
+      <span>多云转阵雨</span>
+      <span class="sep">·</span>
+      <span class="temp">18-25°C</span>
+      <span class="sep">·</span>
+      <span>💧 60% 降水</span>
+      <span class="sep">·</span>
+      <span>☂️ 午后雷阵雨,带伞</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tb">
+        <div class="tb-time"><b>12:00</b></div>
+        <div class="tb-title"><span class="spot">专车接机 → 入住</span></div>
+        <div class="tb-meta">昆明中维翠湖宾馆 · 出门即翠湖</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>12:00</b></div>
+        <div class="meal">
+          <div class="meal-icon lu">🍛</div>
+          <div>
+            <div class="meal-label">Lunch · 简单午餐</div>
+            <div class="meal-name">⭐ 盈江傣味园 <span class="meal-stars">(翠湖北路店)</span></div>
+            <div class="meal-meta">翠湖北路 66 号 · 步行 3 分钟 · 11:00-21:00 · 人均 50-80</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>14:00</b></div>
+        <div class="tb-title"><span class="spot">【昆明老街】</span> 文庙直街 → 甬道街</div>
+        <div class="tb-meta">清末民初老建筑群 · 步行 1.5 小时</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>清末民初老建筑群,文庙直街、甬道街、景星街;聂耳故居;文庙大成殿</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>沿街小店逛,孩子看鲜花/奇石/小动物</div>
+        <div class="tb-detail bilei"><div class="tb-detail-label">避雷</div>部分小巷有"私人博物馆"收费陷阱</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>15:00</b></div>
+        <div class="tb-title"><span class="spot">【翠湖公园】</span> 荷花、湖心亭、喂松鼠</div>
+        <div class="tb-meta">出酒店即到 · 步行 1 小时</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>7 月荷花盛开(主湖区);九龙池周边最美;湖心亭;环湖步道两旁法国梧桐</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>喂松鼠(带花生/瓜子);夏季划脚踏船/电瓶船 30-50 元/小时</div>
+        <div class="tb-detail bilei"><div class="tb-detail-label">避雷</div>湖边"茶叶店"多推销,别进</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>16:00</b></div>
+        <div class="tb-title"><span class="spot">【陆军讲武堂】</span> 黄墙琉璃瓦,免费</div>
+        <div class="tb-meta">翠湖公园西门外 · 30-45 分钟</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>黄墙琉璃瓦建筑,民国时期"黄埔军校"前身;军事博物馆(免费)</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>军事博物馆参观</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>16:30</b></div>
+        <div class="tb-title"><span class="spot">【黄公东街】</span> 民国风文创小店</div>
+        <div class="tb-meta">翠湖南侧 · 30-60 分钟</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>民国风小街,文创小店聚集;街边咖啡馆、奶茶店</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>逛街拍照</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>17:30</b></div>
+        <div class="tb-title"><span class="spot">【南强夜市】</span> 烤乳扇、烧豆腐、稀豆粉</div>
+        <div class="tb-meta">昆明南强街 · 步行 15 分钟 · 2 小时</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>本地夜市,小吃/手工艺品</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>烤乳扇(玫瑰酱/巧克力酱)/烧豆腐(石屏豆腐)/稀豆粉/木瓜水/玫瑰凉糕</div>
+        <div class="tb-detail bilei"><div class="tb-detail-label">避雷</div>昆虫串孩子可试,过辣菜让老板"不辣/微辣"</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>19:30</b></div>
+        <div class="meal">
+          <div class="meal-icon di">🍽</div>
+          <div>
+            <div class="meal-label">Dinner · 黑珍珠一钻</div>
+            <div class="meal-name">⭐⭐⭐ 翠府(翠湖北路店)</div>
+            <div class="meal-meta">翠湖北路 100 号 · 步行 1-2 分钟 · 11:00-14:00 / 17:00-22:00 · 人均 379</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--ink-muted);">备选:盈江傣味园(步行 3 分钟) / 南强夜市 · 提前 1-2 天订位</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>21:00</b></div>
+        <div class="meal">
+          <div class="meal-icon sn">🌙</div>
+          <div>
+            <div class="meal-label">Snack · 夜宵</div>
+            <div class="meal-name">胖嬢烧烤(西园北路店)</div>
+            <div class="meal-meta">西园北路 32 号 · 车程 10-15 分钟 · 18:00 后开</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============= D2 ============= -->
+<div class="wrap" id="day2">
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-num">D2<sup>/06</sup></div>
+      <div>
+        <div class="day-title">7-18 周六 · 昆明 → 大理</div>
+        <div class="day-route">西山 → 捞鱼河 → 动车 19:50 → 抵大理 · <b>悦山海伴山墅</b></div>
+      </div>
+    </div>
+
+    <div class="day-weather">
+      <span class="icon">⛅</span>
+      <span>多云转阵雨</span>
+      <span class="sep">·</span>
+      <span class="temp">17-26°C</span>
+      <span class="sep">·</span>
+      <span>💧 50% 降水</span>
+      <span class="sep">·</span>
+      <span>🧥 滇池风大,薄外套</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tb">
+        <div class="tb-time"><b>07:30</b></div>
+        <div class="meal">
+          <div class="meal-icon bf">🍜</div>
+          <div>
+            <div class="meal-label">Breakfast · 早餐</div>
+            <div class="meal-name">⭐ 晨曦豆花米线(翠湖店)</div>
+            <div class="meal-meta">钱局街白云巷 33 号附 2 号 · 步行 5 分钟 · 07:00-20:00 · 人均 15-25</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--ink-muted);">备选:厚香软烧饵块(丽江路 1 号,车程 15 分,06:30-12:00 卖完收)</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>08:30</b></div>
+        <div class="tb-title"><span class="spot">【西山+龙门石窟】</span> 俯瞰滇池</div>
+        <div class="tb-meta">含门票+往返大巴+单边索道+单边电瓶车 · 3.5 小时</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>俯瞰滇池全景;龙门石窟悬崖石刻;华亭寺、太华寺千年古刹;茶马花街仿古商业街</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>索道上山,沿途寺庙参观,下山茶马花街小吃</div>
+        <div class="tb-detail bilei"><div class="tb-detail-label">避雷</div>雨季部分栈道湿滑;龙门石窟"上刀山"段窄,孩子需紧跟;山下"茶叶店""银器店"推销多</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>12:30</b></div>
+        <div class="meal">
+          <div class="meal-icon lu">🍛</div>
+          <div>
+            <div class="meal-label">Lunch · 午餐</div>
+            <div class="meal-name">茶马花街小吃</div>
+            <div class="meal-meta">山下仿古商业街 · 各种云南小吃 · 或自带零食</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>14:00</b></div>
+        <div class="tb-title"><span class="spot">【捞鱼河湿地公园】</span> 水上水杉林、玻璃船</div>
+        <div class="tb-meta">滇池东岸 · 3 小时 · 公园免费,玻璃船另收</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>水上水杉林(夏季绿色);玻璃船、透明船等水上项目</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>玻璃船 80-120 元/小时(孩子最爱)</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>17:42</b></div>
+        <div class="tb-title">动车 D3960 → 大理</div>
+        <div class="tb-meta">2 小时 8 分</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>20:30</b></div>
+        <div class="meal">
+          <div class="meal-icon di">🍽</div>
+          <div>
+            <div class="meal-label">Dinner · 晚餐</div>
+            <div class="meal-name">⭐ 富源脆皮猪脚(大理大学店)</div>
+            <div class="meal-meta">大理大学附近 · 步行可达 · 09:00-22:00 · 人均 40-60</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--ink-muted);">酸菜猪脚火锅一锅 38,加鲜牛肉+包浆豆腐。备选:正宗开远米线(古城内,包浆豆腐+炭烤)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============= D3 ============= -->
+<div class="wrap">
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-num">D3<sup>/06</sup></div>
+      <div>
+        <div class="day-title">7-19 周日 · 大理深度</div>
+        <div class="day-route">古城 → 磻溪 S 湾 → 喜洲 · <b>悦山海伴山墅</b></div>
+      </div>
+    </div>
+
+    <div class="day-weather">
+      <span class="icon">☀️</span>
+      <span>多云间晴</span>
+      <span class="sep">·</span>
+      <span class="temp">17-25°C</span>
+      <span class="sep">·</span>
+      <span>💧 20% 降水</span>
+      <span class="sep">·</span>
+      <span>🧴 紫外线强,防晒 SPF50+</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tb">
+        <div class="tb-time"><b>07:30</b></div>
+        <div class="meal">
+          <div class="meal-icon bf">🍜</div>
+          <div>
+            <div class="meal-label">Breakfast · 早餐</div>
+            <div class="meal-name">⭐ 顺喜小锅米线</div>
+            <div class="meal-meta">古城内 · 09:00-18:00 · 人均 15-25</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--ink-muted);">可清汤/少辣。备选:酒店含早</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>08:30</b></div>
+        <div class="tb-title"><span class="spot">【大理古城】</span> 复兴路、人民路、洋人街、五华楼</div>
+        <div class="tb-meta">2 小时</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>复兴路(古城主街);人民路(文创小店聚集);洋人街/护国路;五华楼(古城地标);大理古城墙</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>马车/电瓶车环游古城 20-30 元/人;银匠街;古城内扎染店</div>
+        <div class="tb-detail bilei"><div class="tb-detail-label">避雷</div>主街(复兴路)物价偏高,买特产去喜洲/周城;扎染银饰餐厅常捆绑购物推销</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>10:30</b></div>
+        <div class="tb-title"><span class="spot">【磻溪网红 S 湾】</span> 洱海边骑行</div>
+        <div class="tb-meta">洱海西岸 · 古城北 25 公里 · 1.5 小时</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>洱海边 S 形海岸线;苍山洱海同框</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>自行车骑行 20-50 元/小时(亲子最爱)</div>
+        <div class="tb-detail bilei"><div class="tb-detail-label">避雷</div>旺季人多,早上 10:00 前或傍晚 17:00 后最佳</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>12:00</b></div>
+        <div class="meal">
+          <div class="meal-icon lu">🍛</div>
+          <div>
+            <div class="meal-label">Lunch · 午餐 (排队猛)</div>
+            <div class="meal-name">⭐ 岛七·白族人家私房菜</div>
+            <div class="meal-meta">古城内 · 10:30-14:00 / 16:30-22:00 · 人均 60-80</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--ink-muted);">薄荷炸排骨 45 / 老奶洋芋 16 / 蒜苗牛肉沫 45。务必 11:30 前到!备选:喜洲集市小吃</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>13:30</b></div>
+        <div class="tb-title"><span class="spot">【喜洲古镇】</span> 转角楼+四季麦田+严家大院+海舌公园</div>
+        <div class="tb-meta">洱海北岸 · 4 小时 · 含小火车+扎染</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>转角楼(喜洲标志建筑);四季麦田;海舌公园(洱海伸入湖中的半岛);严家大院(白族三道茶 30 元);喜洲集市</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>麦田小火车 30 元/人(孩子最爱);扎染体验 50-100 元/人(做手帕带回家);白族三道茶</div>
+        <div class="tb-detail bilei"><div class="tb-detail-label">避雷</div>旺季麦田人多,上午去更出片</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>19:00</b></div>
+        <div class="meal">
+          <div class="meal-icon di">🍽</div>
+          <div>
+            <div class="meal-label">Dinner · 晚餐</div>
+            <div class="meal-name">⭐ 富源脆皮猪脚(大理大学店)</div>
+            <div class="meal-meta">酒店步行可达 · 09:00-22:00 · 人均 40-60</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--ink-muted);">备选:正宗开远米线(古城内,早晨-深夜 2-3 点营业)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============= D4 ============= -->
+<div class="wrap" id="day4">
+  <div class="city-head">
+    <div class="city-num">02</div>
+    <div class="city-info">
+      <div class="city-label">Day 2-3 / Dali</div>
+      <div class="city-name">大理 → 丽江</div>
+      <div class="city-en">7.20-7.22 · 玉龙雪山 + 自由活动</div>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-num">D4<sup>/06</sup></div>
+      <div>
+        <div class="day-title">7-20 周一 · 大理 → 丽江</div>
+        <div class="day-route">理想邦 → 双廊 → 抵丽江 · <b>汐屿山渡</b></div>
+      </div>
+    </div>
+
+    <div class="day-weather">
+      <span class="icon">🌥</span>
+      <span>多云转阵雨</span>
+      <span class="sep">·</span>
+      <span class="temp">17-24°C</span>
+      <span class="sep">·</span>
+      <span>💧 40% 降水</span>
+      <span class="sep">·</span>
+      <span>🧥 苍山云雾,薄外套</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tb">
+        <div class="tb-time"><b>07:30</b></div>
+        <div class="meal">
+          <div class="meal-icon bf">🍜</div>
+          <div>
+            <div class="meal-label">Breakfast · 早餐</div>
+            <div class="meal-name">⭐ 巍山耙肉饵丝</div>
+            <div class="meal-meta">下关区(多店) · 08:30-17:30 · 人均 20-30</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--ink-muted);">包车沿途顺路。备选:酒店含早</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>09:30</b></div>
+        <div class="tb-title"><span class="spot">【圣托里尼理想邦】</span> 蓝白希腊风建筑群</div>
+        <div class="tb-meta">洱海东岸 · 双廊附近 · 2.5 小时</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>蓝白希腊风建筑群,人工造景但很出片;洱海、苍山同框</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>拍照;理想的花园下午茶 88-188 元/人</div>
+        <div class="tb-detail bilei"><div class="tb-detail-label">避雷</div>本质人造景观,不要期望太高</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>12:00</b></div>
+        <div class="meal">
+          <div class="meal-icon lu">🍛</div>
+          <div>
+            <div class="meal-label">Lunch · 午餐+下午茶</div>
+            <div class="meal-name">理想邦景点自带下午茶</div>
+            <div class="meal-meta">孩子果汁/小吃</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>14:30</b></div>
+        <div class="tb-title"><span class="spot">【双廊古镇】</span> 苍洱第一镇,太阳宫外观</div>
+        <div class="tb-meta">2 小时 · 沿途加餐:海东茄子烧烤 07:00-19:00 / 李氏烤卤 09:00-19:00 / 如意旺子米线 07:30-18:00</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>苍洱第一镇:洱海最佳观景点;杨丽萍太阳宫(外观);双廊街巷</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>逛双廊街巷,沿途吃下关美食</div>
+        <div class="tb-detail bilei"><div class="tb-detail-label">避雷</div>太阳宫不开放;双廊吃饭方便但游客店较多</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>16:30</b></div>
+        <div class="tb-title">包车大理 → 丽江(约 2.5 小时)</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>19:30</b></div>
+        <div class="meal">
+          <div class="meal-icon di">🍽</div>
+          <div>
+            <div class="meal-label">Dinner · 晚餐</div>
+            <div class="meal-name">⭐⭐ 阿婆情腊排骨火锅(古城旗舰店)</div>
+            <div class="meal-meta">古城五一街兴仁上段 38 号 · 步行 10 分钟 · 07:00-24:00 · 人均 70-100</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--ink-muted);">备选:阿妈腊排骨(北门大水车店) / 钰洁腊排骨(21:00 关,赶不上慎选)</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>21:00</b></div>
+        <div class="tb-title"><span class="spot">【丽江古城】</span> 四方街夜色</div>
+        <div class="tb-meta">维护费 50 元/人 · 1 小时</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============= D5 ============= -->
+<div class="wrap">
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-num">D5<sup>/06</sup></div>
+      <div>
+        <div class="day-title">7-21 周二 · 玉龙雪山日(高反预警)</div>
+        <div class="day-route">云杉坪 → 蓝月谷 → 印象丽江 → 白沙 · <b>汐屿山渡</b></div>
+      </div>
+    </div>
+
+    <div class="day-weather d5">
+      <span class="icon">❄️</span>
+      <span>阴转小雨</span>
+      <span class="sep">·</span>
+      <span class="temp">古城 14-22°C · 雪山 -2-8°C</span>
+      <span class="sep">·</span>
+      <span>💧 60% 降水</span>
+      <span class="sep">·</span>
+      <span>🧥 羽绒服/冲锋衣必备</span>
+    </div>
+
+    <div class="warn-box" style="margin: 0 0 24px;">
+      <div class="warn-box-title">⚠️ 高反预防</div>
+      <ul>
+        <li><strong>提前 3 天红景天</strong> · D2 起每日服用,儿童剂量减半</li>
+        <li>当天禁忌:不洗头、不剧烈运动、不奔跑、不饮酒、不吃太饱、多喝热水</li>
+        <li>氧气罐:山下药店 15-30 元/瓶,景区 60-100 元(差 3-4 倍,山下买)</li>
+        <li>儿童高反症状识别:头痛、嗜睡、呕吐、嘴唇发紫,立即下山,山顶有医疗站</li>
+      </ul>
+    </div>
+
+    <div class="timeline">
+      <div class="tb">
+        <div class="tb-time"><b>07:00</b></div>
+        <div class="meal">
+          <div class="meal-icon bf">🥣</div>
+          <div>
+            <div class="meal-label">Breakfast · 酒店含早</div>
+            <div class="meal-name">酒店早餐 + 保温杯热水 + 红景天 + 巧克力/能量棒</div>
+            <div class="meal-meta">7:00 前出门 · 务必吃饱再上山</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>07:30</b></div>
+        <div class="tb-title">包车前往玉龙雪山(车程 1 小时)</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>09:00</b></div>
+        <div class="tb-title"><span class="spot">【云杉坪】</span> 高山草甸,"小瑞士"</div>
+        <div class="tb-meta">海拔 3360m · 2 小时 · 含索道 60 元</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>高山草甸,云杉林围绕;雪山背景,出片绝佳;牦牛在草甸上吃草</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>草甸漫步,拍雪山背景照,孩子兴奋</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>11:00</b></div>
+        <div class="tb-title"><span class="spot">【蓝月谷】</span> 雪山下的蓝宝石</div>
+        <div class="tb-meta">2.5 小时 · 电瓶车 50 元</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>雪山下的蓝绿色湖泊,"小九寨"</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>沿湖步行栈道,拍照;电瓶车 50 元/人</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>13:30</b></div>
+        <div class="meal">
+          <div class="meal-icon lu">🥪</div>
+          <div>
+            <div class="meal-label">Lunch · 午餐</div>
+            <div class="meal-name">自带零食/巧克力/牛肉干/热水</div>
+            <div class="meal-meta">雪山简餐价格高且难吃,自带最稳</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>14:30</b></div>
+        <div class="tb-title"><span class="spot">【印象丽江】</span> 实景演出(可跳过)</div>
+        <div class="tb-meta">280 元/人,1.2m 以下儿童半价 · 1 小时</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>张艺谋导演,雪山为背景的实景演出;纳西族传统歌舞</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>实景演出体验(可跳过节约 1.5 小时)</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>16:30</b></div>
+        <div class="tb-title"><span class="spot">【白沙古镇】</span> 雪山第一小镇</div>
+        <div class="tb-meta">2 小时 · 晚餐在古城内,不安排白沙用餐</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">看什么</div>雪山第一小镇:抬头就是玉龙雪山;白沙壁画:明代纳西族壁画</div>
+        <div class="tb-detail kan"><div class="tb-detail-label">玩什么</div>东巴纸坊 50-100 元/人;街边小店逛;拍雪山背景照</div>
+        <div class="tb-detail bilei"><div class="tb-detail-label">避雷</div>酒吧街不适合亲子;"普洱茶 9.9 包邮"别买</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>19:30</b></div>
+        <div class="meal">
+          <div class="meal-icon di">🍽</div>
+          <div>
+            <div class="meal-label">Dinner · 晚餐</div>
+            <div class="meal-name">⭐⭐ 阿婆情腊排骨火锅(古城旗舰店)</div>
+            <div class="meal-meta">古城五一街 38 号 · 步行 10 分钟 · 07:00-24:00 · 人均 70-100</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--ink-muted);">腊排骨+酥肉+丽江粑粑。备选:阿妈腊排骨 / 钰洁腊排骨(09:00-21:00) / ⛔ 菌彩(上海有分店,备选)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============= D6 ============= -->
+<div class="wrap">
+  <div class="day-card">
+    <div class="day-head">
+      <div class="day-num">D6<sup>/06</sup></div>
+      <div>
+        <div class="day-title">7-22 周三 · 丽江自由活动 + 送机</div>
+        <div class="day-route">三选一自由活动 → 束河午餐 → 送机 · 预留 2.5 小时到机场</div>
+      </div>
+    </div>
+
+    <div class="day-weather">
+      <span class="icon">☀️</span>
+      <span>晴间多云</span>
+      <span class="sep">·</span>
+      <span class="temp">14-24°C</span>
+      <span class="sep">·</span>
+      <span>💧 10% 降水</span>
+      <span class="sep">·</span>
+      <span>✈️ 送机日天气好</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tb">
+        <div class="tb-time"><b>08:00</b></div>
+        <div class="meal">
+          <div class="meal-icon bf">🍜</div>
+          <div>
+            <div class="meal-label">Breakfast · 早餐</div>
+            <div class="meal-name">⭐ 88 号小吃店(兴仁店)</div>
+            <div class="meal-meta">古城五一街 88 号 · 步行 10-15 分钟 · 通常 7-8 点后开 · 人均 30-50</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--ink-muted);">鸡豆凉粉(1984 年起家)。备选:忠顺饭店(忠义市场 08:00-24:00) / 酒店含早</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>09:00</b></div>
+        <div class="tb-title"><span class="spot">【自由活动三选一】</span></div>
+        <div class="grid-2" style="margin: 12px 0;">
+          <div class="tip">
+            <div class="tip-num">A</div>
+            <div class="tip-title">清溪水库 ⭐⭐⭐⭐⭐</div>
+            <div class="tip-body">距古城车程 10 分钟,免费,本地人私藏水库,整片湖面直面玉龙雪山,环湖大草坪,孩子可自由跑动,1 小时足够</div>
+          </div>
+          <div class="tip">
+            <div class="tip-num">B</div>
+            <div class="tip-title">忠义市场 ⭐⭐⭐⭐⭐</div>
+            <div class="tip-body">古城南侧车程 5 分钟,免费,本地原生农贸市场,云南本地果蔬/山货/野生菌/纳西小吃,9 点前最热闹</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>12:00</b></div>
+        <div class="meal">
+          <div class="meal-icon lu">🥛</div>
+          <div>
+            <div class="meal-label">Lunch · 束河午餐</div>
+            <div class="meal-name">⭐ 阿安酸奶 + 丽江粑粑</div>
+            <div class="meal-meta">束河古镇 · 轻食,赶飞机友好</div>
+            <div style="margin-top:6px;font-size:13px;color:var(--ink-muted);">备选:忠顺饭店(忠义市场旁) / ⛔ 云中鱼蒸汽石锅鱼(上海 4 家分店,备选)</div>
+          </div>
+        </div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>13:30</b></div>
+        <div class="tb-title">酒店取行李 → 出发机场</div>
+      </div>
+      <div class="tb">
+        <div class="tb-time"><b>14:00</b></div>
+        <div class="tb-title">丽江三义机场送机</div>
+        <div class="tb-meta">预留 2.5 小时到机场</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============= 饮食警告 ============= -->
+<section style="background: var(--bg-elevated);" id="warn">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">Section 02 — Warnings</div>
+      <h2 class="sec-title">饮食警告清单</h2>
+      <p class="sec-sub">儿童十二条命。云南菜好吃,但有些东西 12 岁孩子绝对不碰。</p>
+    </div>
+    <div class="warn-box" style="padding:32px 36px;">
+      <div class="warn-box-title">⛔ 绝对禁止</div>
+      <ul>
+        <li><strong>生皮</strong> · 大理白族传统生猪肉 · 寄生虫风险</li>
+        <li><strong>淡水鱼生</strong> · 丽江"三文鱼/虹鳟"刺身、洱海弓鱼生 · 淡水鱼寄生虫风险远高于海水鱼</li>
+        <li><strong>傣族剁生/撒撇</strong> · 生肉末 · 儿童不吃</li>
+      </ul>
+    </div>
+    <div class="warn-box" style="background: var(--info-bg); border-color: rgba(26,77,122,.2); border-left-color: var(--info); padding:32px 36px;">
+      <div class="warn-box-title" style="color: var(--info);">⚠️ 必须警惕</div>
+      <ul>
+        <li style="color: var(--ink-soft);"><strong style="color: var(--info);">野生菌</strong> · 见手青/牛肝菌必须煮透!选正规餐厅,确认加热充分</li>
+        <li style="color: var(--ink-soft);"><strong style="color: var(--info);">过桥米线生配料</strong> · 生鸡蛋/肉片,儿童由家长代为烫熟</li>
+        <li style="color: var(--ink-soft);"><strong style="color: var(--info);">过辣菜</strong> · 酸辣鱼/小锅米线/辣子鸡,点单明确"少辣/不辣/微辣"</li>
+        <li style="color: var(--ink-soft);"><strong style="color: var(--info);">折耳根</strong> · 腥味大,儿童大概率不接受</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 餐厅总表 ============= -->
+<section id="food">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">Section 03 — Restaurants</div>
+      <h2 class="sec-title">餐厅总表</h2>
+      <p class="sec-sub">22 家店,按城市分。每家都查了营业时间(2026-07-02 数据,临近出行请核对)。</p>
+    </div>
+
+    <!-- 昆明 -->
+    <div class="city-head">
+      <div class="city-num">A</div>
+      <div class="city-info">
+        <div class="city-label">City 01 / Kunming</div>
+        <div class="city-name">昆明</div>
+        <div class="city-en">中维翠湖宾馆 · 出门即翠湖</div>
+      </div>
+      <div class="city-count">
+        <div class="city-count-num">7+2</div>
+        <div class="city-count-lbl">家店</div>
+      </div>
+    </div>
+
+    <h3 class="subsection-head">🍢 小吃烧烤 (3 家)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>餐厅</th><th>地址</th><th>招牌</th><th>人均</th><th>营业</th><th>靠近</th><th>适配</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>文山荷鲜居</td><td>染布巷 10 号</td><td>鸡汤米线(20 年老店)</td><td>13-20</td><td><strong>07:00-20:30</strong></td><td>翠湖 步行 5 分</td><td>D1 午餐备选</td></tr>
+          <tr><td>晨曦豆花米线(翠湖店)</td><td>钱局街白云巷 33 号附 2 号</td><td>豆花米线(20 年老店)</td><td>15-25</td><td><strong>07:00-20:00</strong></td><td>翠湖 步行 5 分</td><td>D2 早餐</td></tr>
+          <tr><td>厚香软烧饵块(江岸小区店)</td><td>丽江路 1 号附 15-17 号</td><td>烧饵块(23 年老店)</td><td>5-15</td><td><strong>06:30-12:00 卖完收</strong></td><td>翠湖 车程 15 分</td><td>D2 早餐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="subsection-head">🍚 正餐 (3 家)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>餐厅</th><th>地址</th><th>招牌</th><th>人均</th><th>营业</th><th>靠近</th><th>适配</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>⭐ 盈江傣味园(翠湖北路店)</td><td>翠湖北路 66 号</td><td>傣味</td><td>50-80</td><td><strong>11:00-21:00</strong></td><td>翠湖 步行 3 分</td><td>D1 午餐</td></tr>
+          <tr><td>胖嬢烧烤(西园北路店)</td><td>西园北路 32 号</td><td>街边烧烤(5+分店)</td><td>50-80</td><td><strong>18:00 后</strong></td><td>翠湖 车程 10-15 分</td><td>D1 夜宵备选</td></tr>
+          <tr><td>福德小锅米线(木水花店)</td><td>官渡区福发路</td><td>臭豆腐小锅米线</td><td>20-35</td><td><strong>07:30-24:00</strong></td><td>距翠湖 5km</td><td>备选</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="subsection-head">✨ 漂亮饭 (1 家, 人均 300+)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>餐厅</th><th>地址</th><th>招牌</th><th>人均</th><th>营业</th><th>靠近</th><th>适配</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>⭐ 翠府(翠湖北路店) <span class="badge badge-fancy">黑珍珠一钻</span></td><td>翠湖北路 100 号</td><td>黑松露菌香布袋鸡、宜良乳鸭、菌子系列</td><td>379</td><td><strong>11:00-14:00 / 17:00-22:00</strong></td><td>翠湖 步行 1-2 分</td><td>D1 晚餐</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="subsection-head">🌾 偏远备选 (需专程,非行程必去)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>餐厅</th><th>地址</th><th>招牌</th><th>人均</th><th>营业</th><th>靠近</th><th>适配</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>富民随运羊肉</td><td>富民县(距昆明 40km)</td><td>带皮黑山羊羊肉汤锅、烤全羊</td><td>60-100</td><td><strong>10:00-21:30</strong></td><td>需包车专程</td><td>备选</td></tr>
+          <tr><td>禄劝星辰牛肉火锅</td><td>禄劝县(距昆明 80km)</td><td>黄牛肉火锅、彝族风味</td><td>70-100</td><td><strong>11:00-23:00</strong></td><td>需包车专程</td><td>备选</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 大理 -->
+    <div class="city-head">
+      <div class="city-num">B</div>
+      <div class="city-info">
+        <div class="city-label">City 02 / Dali</div>
+        <div class="city-name">大理</div>
+        <div class="city-en">悦山海伴山墅 · 古城南侧</div>
+      </div>
+      <div class="city-count">
+        <div class="city-count-num">8</div>
+        <div class="city-count-lbl">家店</div>
+      </div>
+    </div>
+
+    <h3 class="subsection-head">🍢 小吃烧烤 (4 家)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>餐厅</th><th>地址</th><th>招牌</th><th>人均</th><th>营业</th><th>靠近</th><th>适配</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>正宗开远米线</td><td>古城内(待高德确认门牌)</td><td>包浆豆腐、炭烤鸡蛋、蘸水</td><td>~20</td><td><strong>早晨-深夜 2-3 点</strong></td><td>古城内</td><td>D2 夜宵 / D3 逛吃</td></tr>
+          <tr><td>顺喜小锅米线</td><td>古城内(企查查确认)</td><td>小锅米线(可清汤/少辣)</td><td>15-25</td><td><strong>09:00-18:00</strong></td><td>古城内</td><td>D3 早餐</td></tr>
+          <tr><td>应峰鲜奶坊(广武路)</td><td>古城广武路</td><td>鲜奶/酸奶</td><td>10-20</td><td><strong>10:00-18:00</strong></td><td>古城广武路</td><td>D3 加餐</td></tr>
+          <tr><td>巍山耙肉饵丝</td><td>下关区(多店)</td><td>耙肉饵丝(巍山特色)</td><td>20-30</td><td><strong>08:30-17:30</strong></td><td>下关区</td><td>D4 早餐备选</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="subsection-head">🍚 正餐 (4 家)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>餐厅</th><th>地址</th><th>招牌</th><th>人均</th><th>营业</th><th>靠近</th><th>适配</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>⭐ 岛七·白族人家私房菜</td><td>古城内(必应确认)</td><td>薄荷炸排骨 45、老奶洋芋 16、蒜苗牛肉沫 45</td><td>60-80</td><td><strong>10:30-14:00 / 16:30-22:00</strong></td><td>古城内</td><td>D3 午餐(11:30 前到)</td></tr>
+          <tr><td>富源脆皮猪脚(大理大学)</td><td>大理大学旁(大学城美食)</td><td>酸菜猪脚火锅(一锅 38)</td><td>40-60</td><td><strong>09:00-22:00</strong></td><td>大学步行可达</td><td>D2/D3 晚餐</td></tr>
+          <tr><td>李氏烤卤(下关)</td><td>下关区(必应确认)</td><td>烤卤</td><td>30-50</td><td><strong>09:00-19:00</strong></td><td>下关区</td><td>D4 沿途</td></tr>
+          <tr><td>如意旺子米线(下关)</td><td>下关区</td><td>如意旺子米线</td><td>15-25</td><td><strong>07:30-18:00</strong></td><td>下关区</td><td>D4 沿途</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 丽江 -->
+    <div class="city-head">
+      <div class="city-num">C</div>
+      <div class="city-info">
+        <div class="city-label">City 03 / Lijiang</div>
+        <div class="city-name">丽江</div>
+        <div class="city-en">汐屿山渡 · 古城内,步行 15 分钟到四方街</div>
+      </div>
+      <div class="city-count">
+        <div class="city-count-num">5</div>
+        <div class="city-count-lbl">家店</div>
+      </div>
+    </div>
+
+    <h3 class="subsection-head">🍢 小吃烧烤 (5 家)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>餐厅</th><th>地址</th><th>招牌</th><th>人均</th><th>营业</th><th>靠近</th><th>适配</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>88 号小吃店(兴仁店)</td><td>五一街兴仁上段 88 号</td><td>鸡豆凉粉(1984 年起家)</td><td>30-50</td><td><strong>通常 7-8 点后开</strong></td><td>步行 10-15 分</td><td>D6 早餐</td></tr>
+          <tr><td>忠顺饭店</td><td>忠义市场 198 号</td><td>本地家常</td><td>40-70</td><td><strong>08:00-24:00</strong></td><td>步行 10 分</td><td>D6 早餐备选</td></tr>
+          <tr><td>丽程饭店(黑龙潭店)</td><td>民主路 64/66 号</td><td>本地家常</td><td>50-80</td><td>待确认</td><td>步行 15 分</td><td>—</td></tr>
+          <tr><td>阿妈意纳西饮食院(小石桥店)</td><td>光义街金星巷 70 号</td><td>纳西传统菜</td><td>60-90</td><td>待确认</td><td>四方街附近</td><td>—</td></tr>
+          <tr><td>丽鹤饭店(龙潭广场店)</td><td>民主路 54 号</td><td>云南菜 52 道推荐</td><td>50-80</td><td>待确认</td><td>步行 5-10 分</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="subsection-head">🍚 正餐 (6 家, 2 家⛔备选)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>餐厅</th><th>地址</th><th>招牌</th><th>人均</th><th>营业</th><th>靠近</th><th>适配</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>⭐ 阿婆情腊排骨(古城旗舰店)</td><td>五一街兴仁上段 38 号</td><td>秘制腊排骨、黑松露午餐肉、酥肉、丽江粑粑</td><td>70-100</td><td><strong>07:00-24:00</strong></td><td>步行 10 分</td><td>D4/D5 晚餐首选</td></tr>
+          <tr><td>阿婆情腊排骨(大水车店)</td><td>古城北门大水车旁</td><td>同旗舰店</td><td>70-100</td><td>午晚市</td><td>古城北门</td><td>D4/D5 备选</td></tr>
+          <tr><td>阿妈腊排骨(北门大水车店)</td><td>新义街积善巷 81-1 号</td><td>腊排骨火锅</td><td>60-100</td><td>午晚市</td><td>大水车旁</td><td>D4/D5 备选</td></tr>
+          <tr><td>钰洁腊排骨火锅</td><td>象山路象山市场</td><td>腊排骨(矮桌板凳)</td><td>60-90</td><td><strong>09:00-21:00</strong> ⭐</td><td>步行 15 分</td><td>D4/D5 备选(21:00 关)</td></tr>
+          <tr><td><span class="badge badge-warn">⛔</span> 菌彩云南野生菌火锅</td><td>长水路 171 号白龙广场对面</td><td>野生菌火锅、腊排骨</td><td>100-150</td><td>午晚市</td><td>车程 10 分</td><td>备选(上海有分店)</td></tr>
+          <tr><td><span class="badge badge-warn">⛔</span> 云中鱼蒸汽石锅鱼</td><td>待导航(束河/古城)</td><td>蒸汽石锅鱼、腊排骨</td><td>80-120</td><td>待确认</td><td>待导航</td><td>备选(上海 4 家分店)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============= 须知 ============= -->
+<section id="notes" style="background: var(--bg-elevated);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">Section 04 — Notes</div>
+      <h2 class="sec-title">通用须知</h2>
+      <p class="sec-sub">出门前打印一张给司机。带 12 岁孩子出行,这 40 条够用了。</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="tip">
+        <div class="tip-num">01</div>
+        <div class="tip-title">天气与装备</div>
+        <div class="tip-body">
+          7 月雨季,日均 16-25°C,雨水多为阵雨。每天带伞 + 雨衣(尤其玉龙雪山)。白天长袖 T 恤 + 薄外套;早晚加抓绒/轻羽绒;雪山羽绒服或租借(50-80 元)。防滑运动鞋,防晒 SPF 50+,防蚊喷雾。
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">02</div>
+        <div class="tip-title">高反预防</div>
+        <div class="tip-body">
+          提前 3 天红景天(D2 起),儿童剂量减半。当天不洗头、不剧烈运动、多喝热水。氧气罐山下药店 15-30 元/瓶(景区 60-100 元,差 3-4 倍)。山上停留 4-5 小时足够,云杉坪索道 3360m 已足够。
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">03</div>
+        <div class="tip-title">儿童安全</div>
+        <div class="tip-body">
+          儿童独立活动范围:翠湖、老街、南强夜市可放手;古城、雪山紧跟大人;洱海边注意栈道安全。每天不超过 2 个核心景点,留出发呆/休息时间,备点零食/能量棒。晕车药,话梅/陈皮。
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">04</div>
+        <div class="tip-title">交通与司机</div>
+        <div class="tip-body">
+          每天 8-9 小时 200 公里用车,含路费/油费/停车/司机讲解/食宿。昆明→大理动车 D3960(17:42-19:50);大理→丽江包车约 2.5 小时;丽江→机场 30-45 分钟。机场预留 2.5 小时。
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">05</div>
+        <div class="tip-title">住宿与退房</div>
+        <div class="tip-body">
+          丽江古城维护费 50 元/人,通常客栈代收。古城内住宿:拖箱子走石板路累,选有电梯的客栈。D6 退房后行李寄存客栈前台,贵重物品随身带。
+        </div>
+      </div>
+      <div class="tip">
+        <div class="tip-num">06</div>
+        <div class="tip-title">必避雷</div>
+        <div class="tip-body">
+          拉市海骑马(低价招揽 50-100 元 + 坐地起价 200-500 元);古城主街餐厅(大研四方街、洋人街);9.9 包邮普洱茶(真品 100-500 元/饼起);银器店(游客店多为合金);私人博物馆(收费陷阱);强行推销(茶叶/银器/玉石店);印象丽江(280 元/人,可跳过节约 1.5 小时)。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= 购物 ============= -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">Section 05 — Shopping</div>
+      <h2 class="sec-title">购物清单</h2>
+      <p class="sec-sub">避开古城主街高价店,选嘉华/潘祥记等连锁或司机推荐。</p>
+    </div>
+    <div class="info-box">
+      <strong>重点:</strong> 特色零食/伴手礼 + 手工艺品。避开古城主街高价店,选嘉华/潘祥记等连锁或司机推荐。
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>类别</th><th>品名</th><th>推荐地点</th><th>价格</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>零食</td><td>鲜花饼(玫瑰/茉莉/紫薯)</td><td>嘉华/潘祥记连锁</td><td>10-30 元/盒</td></tr>
+          <tr><td>零食</td><td>大理乳扇沙琪玛</td><td>大理古城 + 喜洲</td><td>20-40 元/包</td></tr>
+          <tr><td>零食</td><td>丽江牦牛肉干</td><td>丽江古城 + 连锁</td><td>30-80 元/包</td></tr>
+          <tr><td>零食</td><td>普洱茶饼(生/熟)</td><td>束河茶厂/连锁</td><td>100-500 元/饼</td></tr>
+          <tr><td>零食</td><td>云南小粒咖啡</td><td>后谷咖啡连锁</td><td>30-80 元/盒</td></tr>
+          <tr><td>零食</td><td>野生菌干货(松茸/牛肝菌)</td><td>正规超市 + 嘉华</td><td>100-500 元/盒</td></tr>
+          <tr><td>零食</td><td>七彩云南花茶</td><td>连锁超市</td><td>30-80 元/盒</td></tr>
+          <tr><td>手工艺</td><td>大理扎染布艺/手帕</td><td>周城村 + 璞真博物馆</td><td>30-200 元/件</td></tr>
+          <tr><td>手工艺</td><td>白族银饰(耳环/手镯)</td><td>鹤庆银匠 + 古城店</td><td>100-800 元/件</td></tr>
+          <tr><td>手工艺</td><td>丽江东巴纸制品</td><td>白沙古镇东巴纸坊</td><td>30-150 元/件</td></tr>
+          <tr><td>手工艺</td><td>纳西刺绣</td><td>古城银匠街</td><td>50-300 元/件</td></tr>
+          <tr><td>手工艺</td><td>普洱茶具(紫砂/建水紫陶)</td><td>古城茶具店</td><td>80-500 元/件</td></tr>
+          <tr><td>伴手礼</td><td>鲜花(切花/永生花/干花)</td><td>斗南花卉市场(昆明)</td><td>10-50 元/束</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Yunnan<em>.</em></div>
+        <p class="foot-tag">3 城 6 天 22 店 16 景,带孩子慢慢走的私人团行程。每家店都亲自验证,每个景点都标好「看什么、玩什么、避雷」。</p>
+      </div>
+      <div class="foot-col">
+        <h4>行程</h4>
+        <ul>
+          <li><a href="#day1">D1-D3 昆明+大理</a></li>
+          <li><a href="#day4">D4-D6 大理→丽江</a></li>
+          <li><a href="#food">餐厅总表</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>资源</h4>
+        <ul>
+          <li><a href="#warn">饮食警告</a></li>
+          <li><a href="#notes">通用须知</a></li>
+          <li><a href="#">三城 food.md</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>2026-07-02 · 数据基于必应验证 + 用户实拍</div>
+      <div>临近出行请查实时营业</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
