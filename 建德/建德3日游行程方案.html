@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>建德 3 日游完整攻略 · 悬空寺+千岛湖+严州古城</title>
+<style>
+  :root{
+    --text:#1A1B1C; --text2:#6B7280; --bg:#F4F3EE; --card:#FFFFFF; --line:#E4E3DD;
+    --g1:#94D8C3; --g2:#2E8B74; --rain:#8BC8EA; --rain2:#3E6F96; --sun:#F4B393; --sun2:#C97B4A;
+    --warn:#FAAD14; --bad:#EA6668;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--text); font-family:-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif; line-height:1.7; padding:16px 12px 56px; font-size:15px;}
+  .wrap{max-width:900px; margin:0 auto;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 16px 14px; margin:14px 0; box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  .head{background:linear-gradient(135deg, rgba(148,216,195,.22), rgba(139,200,234,.18)); border:1px solid var(--line); border-radius:16px; padding:20px 16px; margin:14px 0;}
+  .head h1{font-size:21px; font-weight:700; line-height:1.4;}
+  .head .sub{font-size:13px; color:var(--text2); margin-top:6px;}
+  .chip{display:inline-block; padding:2px 10px; border-radius:999px; font-size:12px; margin:4px 6px 0 0; background:rgba(27,27,27,.05); line-height:1.8;}
+  .chip b{font-weight:600;}
+  .c-train{background:rgba(139,200,234,.18);}
+  .c-rain{background:rgba(139,200,234,.25); color:#2A5378;}
+  .c-mid{background:rgba(122,138,163,.28); color:#33445C;}
+  .c-sun{background:rgba(244,179,147,.28); color:#8A4E24;}
+  .c-ok{background:rgba(82,196,26,.14); color:#2F7A0B;}
+  .c-no{background:rgba(234,102,104,.16); color:#A33A3C;}
+  .c-call{background:rgba(250,173,20,.16); color:#8A5A00;}
+  h2{font-size:18px; margin:4px 0 10px; display:flex; align-items:center; gap:8px;}
+  h2 .bar{display:inline-block; width:5px; height:18px; border-radius:3px; flex:none;}
+  .d1 .bar{background:var(--g1);} .d2 .bar{background:var(--rain);} .d3 .bar{background:var(--sun);}
+  h3{font-size:15.5px; margin:14px 0 6px;}
+  h4{font-size:14.5px; margin:12px 0 5px;}
+  p{font-size:14.5px; margin:6px 0;}
+  .note{font-size:13px; color:var(--text2); margin-top:3px;}
+  .tl{border-left:2px solid var(--line); margin-left:6px; padding-left:14px;}
+  .tl .node{position:relative; padding:0 0 14px 0;}
+  .tl .node:before{content:""; position:absolute; left:-19px; top:7px; width:8px; height:8px; border-radius:50%; background:var(--g1);}
+  .d2 .tl .node:before{background:var(--rain);} .d3 .tl .node:before{background:var(--sun);}
+  .time{display:inline-block; font-weight:700; font-size:12.5px; color:#fff; padding:2px 9px; border-radius:6px; margin-right:6px; vertical-align:2px;}
+  .d1 .time{background:var(--g2);} .d2 .time{background:var(--rain2);} .d3 .time{background:var(--sun2);}
+  .tip{background:rgba(250,173,20,.10); border-left:3px solid var(--warn); border-radius:6px; padding:10px 12px; font-size:13.5px; margin:12px 0;}
+  .callout{background:rgba(234,102,104,.07); border-left:3px solid var(--bad); border-radius:6px; padding:10px 12px; font-size:13.5px; margin:12px 0;}
+  .good{background:rgba(148,216,195,.18); border-left:3px solid var(--g2); border-radius:6px; padding:10px 12px; font-size:13.5px; margin:12px 0;}
+  .why{background:rgba(244,243,238,.75); border:1px dashed var(--line); border-radius:10px; padding:12px 13px; margin:12px 0; font-size:13.5px;}
+  .why .t{font-weight:700; color:var(--rain2); margin-bottom:5px;}
+  .why ul{margin-top:4px;}
+  table{width:100%; border-collapse:collapse; font-size:13px; margin:8px 0;}
+  th,td{border:1px solid var(--line); padding:7px 9px; text-align:left; vertical-align:top; line-height:1.55;}
+  th{background:rgba(27,27,27,.04); font-weight:600; white-space:nowrap;}
+  td .b{font-weight:600;}
+  ul,ol{padding-left:22px;}
+  li{font-size:14px; margin:4px 0;}
+  .opt{border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin:10px 0; background:rgba(244,243,238,.5);}
+  .opt .o-title{font-size:15px; font-weight:700; margin-bottom:5px;}
+  .src{font-size:12px; color:var(--text2); line-height:1.8;}
+  .rule{background:rgba(139,200,234,.08); border:1px dashed var(--rain); border-radius:10px; padding:12px 14px; margin:10px 0;}
+  .rule ol{margin-top:4px;}
+  .ver{text-align:center; font-size:12px; color:var(--text2); margin-top:16px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <h1>建德 3 日游完整攻略<br>悬空寺 + 千岛湖 + 严州古城</h1>
+    <div class="sub">版本 v3（2026-10-02 定稿）｜2026.10.3（六）– 10.5（一）｜酒店：杭州建德雅高瑞享酒店（严州古城店，梅城）</div>
+    <div style="margin-top:10px;">
+      <span class="chip c-train"><b>去程</b> C3631 上海虹桥 10:08 → 建德南 12:08/12:10 下（只停 2 分钟）</span>
+      <span class="chip c-train"><b>回程</b> C2404 建德站 16:11 到 / 16:31 开 → 上海虹桥 18:43</span>
+      <span class="chip c-rain"><b>D1 小雨</b> 18~23℃</span>
+      <span class="chip c-mid"><b>D2 小雨转中雨</b> 17~24℃（雨最大）</span>
+      <span class="chip c-sun"><b>D3 晴</b> 12~23℃</span>
+      <span class="chip"><b>行李</b> 28 寸箱（无轮高 70cm）</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📌 一页速览</h2>
+    <table>
+      <tr><th style="width:90px;">维度</th><th>结论</th></tr>
+      <tr><td>去程</td><td>10/3 C3631 上海虹桥 10:08 → <b>建德南 12:08 到 / 12:10 开</b>（不停建德站，只停 2 分钟，提前车门候着）</td></tr>
+      <tr><td>回程</td><td>10/5 C2404 兰溪东 15:49 → 上海虹桥 18:43；<b>建德站 16:11 到 / 16:31 开</b>（停 20 分钟，16:00 前进站）</td></tr>
+      <tr><td>天气</td><td>D1 小雨 18~23℃ ｜ D2 小雨转中雨 17~24℃（三天雨最大）｜ D3 晴 12~23℃</td></tr>
+      <tr><td>三大主线</td><td>D1 山（悬空寺）→ D2 水（千岛湖）→ D3 城（严州古城）</td></tr>
+      <tr><td>D2 主方案</td><td><b>千岛湖中心湖区一日</b>（游船有棚、全天 5–7h 玩得满）</td></tr>
+      <tr><td>D2 备选顺序</td><td>① 七里扬帆游船（酒店旁）→ ② 灵栖洞 + 新安江城区组合线 → ③ 卧龙胜境漂流（降级）</td></tr>
+      <tr><td>核心电话</td><td>大慈岩 0571-64549418 ｜ 卧龙胜境 0571-58306588 ｜ 新安江水电站 0571-64542543</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🧭 排期思路（为什么这么排）</h2>
+    <div class="why"><div class="t">① 三天三条主线：山 → 水 → 城，各占一天</div>
+      <p>D1 山（悬空寺）：最户外、最怕雨的景点放在到达日趁小雨拿下——因为后面雨更大；D2 水（千岛湖）：雨最大的一天选"船上有棚"的项目，烟雨湖景本身是千岛湖的招牌气质，体验不亏；D3 城（严州古城）：晴天收尾，古城离建德站只有 20 分钟，赶车零风险。三天主题不重复、互不抢时间。</p></div>
+    <div class="why"><div class="t">② D1 悬空寺：为什么"先山后酒店"，不能"先酒店后山"</div>
+      <ul>
+        <li><b>关键时间窗</b>：大慈岩 16:00 关门、索道约 15:00 停运。</li>
+        <li><b>先酒店后山（否决）</b>：12:10 建德南 → 50 分钟到酒店（13:05）→ 放行李+午餐 → 14:00 出发 → 15:10 才到山 → 只剩不到 1 小时，玩不完。<b>不成立</b>。</li>
+        <li><b>先山后酒店（采纳）</b>：建德南 → 大慈岩仅 21.7km / 35 分钟（顺路），行李寄存游客中心，13:15 前上索道，15:30 前玩完，16:00 取行李，17:20 到酒店。<b>顺路 + 时间够 + 行李无负担</b>。</li>
+      </ul></div>
+    <div class="why"><div class="t">③ D2 千岛湖 vs 卧龙胜境漂流（本次改版核心）</div>
+      <table>
+        <tr><th>维度</th><th>千岛湖（主）</th><th>卧龙胜境漂流（降备选）</th></tr>
+        <tr><td>位置</td><td>淳安，梅城过去 62km / 1h40</td><td>寿昌镇，<b>与大慈岩/悬空寺同方向</b>，D1 已跑过那片</td></tr>
+        <tr><td>雨天适配</td><td>游船有棚，中雨照常（仅大风大雾停航）</td><td>窗口 14:00–15:00，中雨可能临时停运</td></tr>
+        <tr><td>耗时</td><td>全天 5–7h，玩得满</td><td>1.5–2h，窗口苛刻、迟到作废</td></tr>
+        <tr><td>路线重复</td><td>无</td><td>与 D1 方向重复，来回跑两趟同片区</td></tr>
+      </table>
+      <p><b>结论</b>：漂流是"地点重复 + 时间窗口苛刻 + 雨天不确定"三不利；千岛湖是"雨也成立 + 内容饱满 + 主题契合（D2 就是水）"。故千岛湖升主方案，漂流降为备选。</p></div>
+    <div class="why"><div class="t">④ D2 备选阶梯排序逻辑（按"省事程度 × 雨天友好度"）</div>
+      <ol>
+        <li><b>七里扬帆游船</b>：就在酒店旁姚坞码头，0 赶路，船有棚，雨天照开；</li>
+        <li><b>灵栖洞 + 新安江城区组合线</b>：两处都在市区及以南方向，顺路串一条，且全部"不怕雨"（溶洞、室内水电站、雨中江雾）；</li>
+        <li><b>卧龙胜境漂流</b>：重复路线 + 窗口苛刻 + 停运风险，放最后兜底。</li>
+      </ol></div>
+    <div class="why"><div class="t">⑤ D3 硬约束推理</div>
+      <p>硬约束：16:31 建德站发车 → 16:00 前进站 → 15:30 从酒店出发 → 任何上午加项必须在 14:00 前回到酒店。因此 D3 原则是<b>近 &gt; 特色</b>：古城补完最稳；加分项三选一（七里扬帆 / 新叶 / 八卦村），不贪多。</p></div>
+  </div>
+
+  <div class="card d1">
+    <h2><span class="bar"></span>D1 · 10/3（周六）· 小雨 18~23℃ · 悬空寺日</h2>
+    <div class="tl">
+      <div class="node"><span class="time">10:08</span>上海虹桥 C3631 发车<p class="note">高铁全程约 2 小时。</p></div>
+      <div class="node"><span class="time">12:08-12:10</span>建德南站下车<span class="chip c-no">只停 2 分钟，提前到车门候着</span><p class="note">C3631 走杭衢高铁，不停建德站；候车时先电话确认大慈岩索道开放状态（0571-64549418）。</p></div>
+      <div class="node"><span class="time">12:10-12:50</span>打车去大慈岩景区（21.7km / 35 分钟 / 约 72 元）<p class="note">到游客中心先存 28 寸行李箱（双口径：免费+30 元押金 或 大箱 10 元/天，以现场为准），证件手机随身带。</p></div>
+      <div class="node"><span class="time">13:15 前</span>坐上索道上山（单程 80 元）<p class="note">节假日排队久、索道约 15:00 停运，务必 13:15 前坐掉；错过就只能爬台阶。</p></div>
+      <div class="node"><span class="time">13:15-15:30</span>清音阁 → 江南悬空寺 → 双面佛 → 玻璃栈道（40 元，看雨势）<p class="note">滑道（60 元）下雨天不开放，改步行下山（台阶较缓）；雨后常出云海，反而是名场面。</p></div>
+      <div class="node"><span class="time">16:00</span>取行李，打车回梅城（54km / 1 小时 10 分 / 约 190 元）</div>
+      <div class="node"><span class="time">17:20</span>到酒店入住、晚餐</div>
+      <div class="node"><span class="time">晚上</span>严州古城夜景 · 澄清门城墙看三江口 · 周六 19:00 非遗虾灯巡游 · 严州烤饼/三都麻糍</div>
+    </div>
+    <div class="callout"><b>D1 极端预案：</b>若当天雨势升级（中雨及以上）或索道停运，改灵栖洞（溶洞完全无雨，三洞+地下河船游，2–3 小时），但悬空寺将无时间补玩——这是唯一"不得不放弃"的极端情况。</div>
+    <p><b>大慈岩速查</b>：门票 75–80 元；8:00–16:00；索道上 80 / 下 70；玻璃栈道 40；滑道 60（雨天不开）；电话 0571-64549418。</p>
+    <div class="tip"><b>今晚唯一必打电话：</b>确认 D2 千岛湖船班情况（平台看当日余票）；如仍想去漂流兜底，可问卧龙胜境 0571-58306588 10/4 是否开漂（仅作备选参考）。</div>
+  </div>
+
+  <div class="card d2">
+    <h2><span class="bar"></span>D2 · 10/4（周日）· 小雨转中雨 17~24℃ · 千岛湖日（主方案）</h2>
+
+    <div class="why"><div class="t">为什么选千岛湖（推理）</div>
+      <p>10/4 是三天降雨最大的一天（约 13mm）。千岛湖游船有棚、仅大风/大雾停航，中雨也成立；全天 5–7 小时刚好把一天填满，是本次行程的招牌体验。代价 = 早起（7:00 出发）+ 往返 3 小时 20 分车程，这一天就当"在路上看湖景"。</p></div>
+
+    <h3>时间线</h3>
+    <div class="tl">
+      <div class="node"><span class="time">07:00</span>梅城出发 → 千岛湖中心湖区（62km / 1h40 / 约 220 元）<p class="note"><b>必须 7 点走：千岛湖 13:30 后无全天环线，晚出发只能玩半天。</b></p></div>
+      <div class="node"><span class="time">08:40</span>到中心湖区旅游码头（梦姑路 348 号）买票<span class="chip c-no">优先 9:00–9:30 班</span></div>
+      <div class="node"><span class="time">09:00-15:30</span>游船登岛（散客公交船约 185 元 = 门票 130 + 船票；定时班次 8:30 / 9:00 / 9:30 / 10:00，滚动发船）<p class="note">1 号线：<b>梅峰岛</b>（缆车 60 元可选，俯瞰 300 余岛全景，必去）→ 渔乐岛（餐饮娱乐）→ 龙山岛（海瑞祠等人文）→ 月光岛（4 岛 3 桥，最出片），全程 5–7 小时。</p><p class="note">豪华船备选：梦想号 / 伯爵号约 4 小时，只打梅峰 + 月光两精华岛、上午班含自助餐，价格更高、更省时。</p></div>
+      <div class="node"><span class="time">15:30-16:00</span>下船，码头周边或返程路上解决晚餐（千岛湖鱼头）</div>
+      <div class="node"><span class="time">17:40</span>回到梅城酒店</div>
+      <div class="node"><span class="time">晚上</span>古城夜景 / 三江口散步（若还有精力）</div>
+    </div>
+
+    <h3>千岛湖玩法要点（详细）</h3>
+    <ul>
+      <li><b>码头</b>：中心湖区旅游码头（淳安县千岛湖镇梦姑路 348 号）。</li>
+      <li><b>票价</b>：散客公交船约 185 元（门票 130 + 船票）；梅峰缆车 60 元（可选）。</li>
+      <li><b>班次</b>：8:00–13:00 滚动发船；定时班次 8:30 / 9:00 / 9:30 / 10:00；<b>13:30 后无全天环线</b>。</li>
+      <li><b>航线（公交船 1 号线）</b>：梅峰岛（俯瞰 300 余岛全景，缆车或徒步约 20 分钟登顶）→ 渔乐岛（餐饮娱乐）→ 龙山岛（海瑞祠等人文）→ 月光岛（4 岛 3 桥，最出片）。</li>
+      <li><b>豪华船备选</b>：梦想号 / 伯爵号约 4 小时，只打梅峰 + 月光两精华岛、上午班含自助餐，价格更高、更省时。</li>
+      <li><b>注意事项</b>：① 记好各岛返程集合时间，错过要等下一班；② 岛上餐饮贵，可自带零食；③ 雨天登岛带伞、穿防滑鞋；④ 船上风大，带薄外套；⑤ 若 10/4 早上下暴雨（大到暴雨），临时改走七里扬帆游船（见备选 1）。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🔁 D2 备选方案（按推荐顺序）</h2>
+
+    <div class="opt">
+      <div class="o-title">备选 1 · 七里扬帆游船（最省事：就在酒店旁）</div>
+      <p><b>位置</b>：姚坞码头（梅城镇严东关路），距酒店 5–10 分钟车程。</p>
+      <p><b>内容</b>：富春江小三峡游船（《富春山居图》实景段），航程约 2.5–4 小时，可停靠葫芦瀑布观景。<b>注意：葫芦峡漂流 9/1 起已停漂，但游船观光照常开放。</b></p>
+      <p><b>票价</b>：官方 130 元（门票 80 + 船票 50），平台 90–120 元不等。</p>
+      <p><b>班次</b>：非周末 10:30、13:00；周末 9:00、10:30、13:00。</p>
+      <p><b>提醒</b>：船有棚、雨天照常；散客建议提前 1 天电话确认拼船（官方有时以团队为主）。适用：不想跑远、想省力、天气差的时候。</p>
+    </div>
+
+    <div class="opt">
+      <div class="o-title">备选 2 · 灵栖洞 + 新安江城区组合线（雨天深度线，已合并）</div>
+      <p><b>合并逻辑</b>：两处都在建德市区及以南方向，顺路一条线串完；且都"不怕雨"——灵栖洞是溶洞（恒温 17℃），新安江水电站以室内参观为主，江滨公园雨中江雾反而更仙。是 10/4 雨天内容最充实的一条线。</p>
+      <h4>组合路线（推荐执行版）</h4>
+      <ul>
+        <li>08:30 梅城出发 → 09:15 到灵栖洞（约 59km / 1h / 约 200 元）</li>
+        <li>09:30–11:45 灵栖洞三洞全程（2–2.5h）</li>
+        <li>12:15 到新安江城区午餐（白沙桥头吃鱼，约 30km / 40min）</li>
+        <li>13:30–15:30 新安江水电站（室内为主）</li>
+        <li>15:45–17:00 江滨公园 / 水杉林水上森林散步（免费，雨中江雾出片）</li>
+        <li>18:30 双江街码头 → 19:00 江清月近人实景演艺（可选，雨天是否开演提前问）→ 22:00 前回梅城</li>
+      </ul>
+      <p><b>省力精简版</b>：上午水电站 + 江滨 → 下午灵栖洞 → 傍晚回（砍掉夜游）。</p>
+      <h4>灵栖洞详情</h4>
+      <p>4A 溶洞群、86 版《西游记》取景地；灵泉洞乘船游地下暗河 → 清风洞 → 飞天魔毯 → 霭云洞（雨后常有云雾）→ 滑道下山 → 石林；线上 75 / 现场 80 元（含三洞 + 游船）；8:00–16:00 停止入园；全程 2–3h；洞内恒温 17℃，带薄外套、防滑鞋。</p>
+      <h4>新安江水电站详情</h4>
+      <p>中国第一座自行设计建造的大型水电站；38 元 / +展览馆联票 55–58 元；8:00–16:00；<b>展览馆周二闭馆</b>（10/4 是周日，正常开）；参观 1.5–2h；票务 0571-64542543；停车免费。</p>
+      <p><b>城区往返</b>：梅城 → 城区 27km / 45min / 约 90 元。</p>
+    </div>
+
+    <div class="opt">
+      <div class="o-title">备选 3 · 卧龙胜境漂流（已降级，兜底）</div>
+      <p><b>位置</b>：寿昌镇金桥村里诸自然村；国庆 10/1–10/7 每天 <b>14:00–15:00</b> 开漂（约 4.3km：1km 玻璃滑道 + 3.3km 峡谷漂流，全湿）；电话 0571-58306588。</p>
+      <p><b>降级原因</b>：与 D1 悬空寺同处大慈岩 / 寿昌方向，路线重复；窗口仅 1 小时、迟到作废；10/4 中雨天可能临时停运。</p>
+      <p><b>启用条件</b>：10/4 天气意外转晴且你想玩水 → 13:00 出发 → 14:00–15:00 漂 → 17:00 回。</p>
+      <p><b>装备</b>：速干衣 / 泳衣、整套换洗、手机防水袋、拖鞋。</p>
+    </div>
+  </div>
+
+  <div class="card d3">
+    <h2><span class="bar"></span>D3 · 10/5（周一）· 晴 12~23℃ · 返程日</h2>
+    <div class="tl">
+      <div class="node"><span class="time">06:00-06:30</span>（可选彩蛋）下涯之江村碰运气看新安江晨雾<span class="chip">车程约 20 分钟</span><p class="note">10 月初起雾概率不高，没雾就当江边晨景；不想早起直接跳过。</p></div>
+      <div class="node"><span class="time">上午</span>严州古城补完：登城墙看三江口（晴天视野最好）→ 补逛没去的展馆（浙大西迁旧址等，联票 20）→ 买特产（严州烤饼、三都麻糍）→ 午餐</div>
+      <div class="node"><span class="time">15:00</span>退房出发去建德站（10km / 20–25 分钟 / 约 29 元）</div>
+      <div class="node"><span class="time">16:00</span>进站候车<span class="chip c-no">车 16:11 到站</span></div>
+      <div class="node"><span class="time">16:31</span><b>C2404 发车</b> → 18:43 上海虹桥<p class="note">出发前 12306 再核一次时刻（国庆可能微调）。</p></div>
+    </div>
+
+    <h3>D3 上午加分项（三选一，都保证 14:00 前回酒店）</h3>
+    <div class="good">
+      <p><b>① 七里扬帆游船</b>（最近最省心）：9:00 或 10:30 姚坞码头上船，2.5–4 小时，13:00–14:00 结束，就在酒店旁边。</p>
+      <p><b>② 新叶古村</b>（性价比）：8:00 出发约 1h（约 150 元）；进村免费、核心祠堂联票 60–68 元；抟云塔、有序堂，800 年徽派古村、《爸爸去哪儿》取景地；8:00–16:00；11:30 返程 → 12:40 取行李 → 13:30 到建德站。</p>
+      <p><b>③ 诸葛八卦村</b>（最出片但最贵最远）：8:00 出发约 1h15（约 170 元）；线上 80–85 / 现场 90 元；丞相祠堂 → 钟池八卦阵 → 大公堂，2.5–3h；夏令 7:30–17:00；11:30 返程 → 12:40 取行李 → 13:30 到建德站；嫌贵可从诸葛中学旁小巷免费逛外景。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📋 数据速查表</h2>
+    <h3>路段车程与费用（高德实测，10/2 查询）</h3>
+    <table>
+      <tr><th>路段</th><th>距离</th><th>车程</th><th>打车约</th></tr>
+      <tr><td>建德南 → 大慈岩</td><td>21.7km</td><td>35min</td><td>72 元</td></tr>
+      <tr><td>大慈岩 → 梅城</td><td>54km</td><td>1h10</td><td>190 元</td></tr>
+      <tr><td>建德南 → 梅城</td><td>33km</td><td>50min</td><td>115 元</td></tr>
+      <tr><td>梅城 → 千岛湖中心湖区</td><td>62km</td><td>1h40</td><td>220 元</td></tr>
+      <tr><td>梅城 → 姚坞码头（七里扬帆）</td><td>—</td><td>5–10min</td><td>起步价</td></tr>
+      <tr><td>梅城 → 建德城区</td><td>27km</td><td>45min</td><td>90 元</td></tr>
+      <tr><td>城区 → 灵栖洞</td><td>约 30km</td><td>40min</td><td>约 100 元</td></tr>
+      <tr><td>梅城 → 灵栖洞</td><td>约 59km</td><td>1h</td><td>200 元</td></tr>
+      <tr><td>梅城 → 新叶古村</td><td>—</td><td>约 1h</td><td>约 150 元</td></tr>
+      <tr><td>梅城 → 诸葛八卦村</td><td>—</td><td>约 1h15</td><td>约 170 元</td></tr>
+      <tr><td>梅城 → 建德站</td><td>10km</td><td>23–25min</td><td>29 元</td></tr>
+      <tr><td>梅城 → 下涯</td><td>—</td><td>15–20min</td><td>—</td></tr>
+    </table>
+    <h3>门票与电话</h3>
+    <table>
+      <tr><th>项目</th><th>价格</th><th>开放</th><th>电话</th></tr>
+      <tr><td>大慈岩</td><td>75–80 元；索道上 80 / 下 70；玻璃栈道 40；滑道 60</td><td>8:00–16:00</td><td>0571-64549418</td></tr>
+      <tr><td>千岛湖中心湖区</td><td>公交船约 185（门票 130+船票）；梅峰缆车 60</td><td>8:00–13:00 滚动发船</td><td>—</td></tr>
+      <tr><td>七里扬帆游船</td><td>130 官方 / 90–120 平台</td><td>非周末 10:30、13:00；周末加 9:00</td><td>提前 1 天确认</td></tr>
+      <tr><td>灵栖洞</td><td>线上 75 / 现场 80（含游船）</td><td>8:00–16:00 停止入园</td><td>—</td></tr>
+      <tr><td>新安江水电站</td><td>38 / 联票 55–58</td><td>8:00–16:00；展览馆周二闭馆</td><td>0571-64542543</td></tr>
+      <tr><td>卧龙胜境漂流</td><td>见平台（约 100–150）</td><td>国庆 14:00–15:00</td><td>0571-58306588</td></tr>
+      <tr><td>新叶古村</td><td>进村免费；祠堂联票 60–68</td><td>8:00–16:00</td><td>—</td></tr>
+      <tr><td>诸葛八卦村</td><td>线上 80–85 / 现场 90</td><td>夏令 7:30–17:00</td><td>—</td></tr>
+      <tr><td>严州古城</td><td>免费；展馆联票 20</td><td>24h</td><td>—</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🎒 行李装备与复核清单</h2>
+    <ul>
+      <li><b>雨具</b>：雨衣 + 伞 + 防滑鞋（D1/D2 必备）。</li>
+      <li><b>千岛湖</b>：薄外套（船上风大）、零食、充电宝（5–7h 在船上/岛上）。</li>
+      <li><b>溶洞 / 清晨</b>：薄外套（灵栖洞 17℃、D3 早晨 12℃）。</li>
+      <li><b>若启用漂流</b>：速干衣 / 泳衣、整套换洗、手机防水袋、拖鞋。</li>
+    </ul>
+    <div class="tip"><b>出发前复核清单：</b>① 12306 核对车次时刻；② 10/3 上午问大慈岩索道（0571-64549418）；③ 千岛湖船班看当日余票、设 7:00 闹钟；④ 大慈岩寄存柜内径。</div>
+  </div>
+
+  <div class="card">
+    <h2>🧠 给"学习型 AI"的决策规则（if-then 摘要）</h2>
+    <div class="rule">
+      <ol>
+        <li>若 D1 下车 12:10 且想去悬空寺 → 必须"先山后酒店"（索道 15:00 停运、景区 16:00 关门是硬约束）。</li>
+        <li>若某天预报中雨以上 → 优先选"有棚 / 室内 / 溶洞"项目（船、水电站、灵栖洞），避免纯户外和漂流。</li>
+        <li>若两天行程出现同一方向的景区 → 优先合并到同一天，避免路线重复（本次：大慈岩与卧龙胜境同方向，故二选一）。</li>
+        <li>若返程火车在下午 → 倒推 1.5 小时作为进站缓冲，D3 加项必须在 14:00 前回到酒店。</li>
+        <li>若备选项目多 → 按"距离近 × 雨天友好 × 内容饱满"排序，把最远 / 最不确定的放最后兜底。</li>
+        <li>任何"看天吃饭"项目（索道、漂流、游船、夜游、晨雾）→ 出行前 1 天电话或平台确认，写进攻略必做清单。</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📌 数据来源与口径</h2>
+    <div class="src">
+      · 天气：10/2 查询（墨迹天气 + 中央气象台口径），10/5 多家预报源判晴，出行前建议再核。<br>
+      · 车次：用户票面 + 12306 核对（C3631 经建德南不停建德站；C2404 建德站 16:11/16:31 中途上车有效）。<br>
+      · 车程/车费：高德地图导航（10/2 实测）。<br>
+      · 漂流：卧龙胜境国庆 14:00–15:00 来自去哪儿票务页；葫芦峡漂流 9/1 起停漂（建德官方 10/2 发文"漂流季收官"）。<br>
+      · 千岛湖：中心湖区码头 / 公交船 / 班次来自 2026 年 9 月最新攻略与票务页，国庆以现场及平台当日为准。<br>
+      · 门票/开放：各景区官方页及携程、Trip、同程实时页，出行当天以现场为准。<br>
+      · 免责：游船班次、演出、晨雾、漂流开漂均可能受天气影响临时调整，务必电话或平台二次确认。
+    </div>
+  </div>
+
+  <div class="ver">建德 3 日游完整攻略 · v3 · 2026-10-02 定稿</div>
+
+</div>
+</body>
+</html>
