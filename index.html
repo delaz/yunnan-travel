@@ -76,7 +76,7 @@
     background: rgba(255,255,255,.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 14px 10px; text-align: center;
   }
-  .hero-stat-n { font-size: 24px; font-weight: 800; color: var(--amber-light); line-height: 1; font-feature-settings: "tnum"; }
+  .hero-stat-n { font-size: 26px; font-weight: 800; color: var(--amber-light); line-height: 1; font-feature-settings: "tnum"; }
   .hero-stat-l { font-size: 10px; color: rgba(255,255,255,.65); margin-top: 4px; }
 
   .sticky-hd {
@@ -87,7 +87,7 @@
   .sticky-top {
     display: flex; align-items: center; justify-content: space-between;
     padding: 8px 16px; padding-top: calc(8px + env(safe-area-inset-top));
-    font-size: 11px; font-weight: 600; color: var(--ink-soft);
+    font-size: 12px; font-weight: 600; color: var(--ink-soft);
   }
   .sticky-top .route { color: var(--forest); font-weight: 700; }
 
@@ -103,7 +103,7 @@
     cursor: pointer; transition: all .2s; position: relative;
     display: flex; flex-direction: column; align-items: center; line-height: 1.3;
   }
-  .day-pill small { font-size: 8px; font-weight: 400; opacity: .6; }
+  .day-pill small { font-size: 10px; font-weight: 400; opacity: .6; }
   .day-pill.active { background: var(--forest); color: white; }
   .day-pill.active small { opacity: .8; }
   .day-pill:active { transform: scale(.94); }
@@ -129,9 +129,9 @@
   .day-num sup { font-size: 16px; font-weight: 500; color: rgba(255,255,255,.45); margin-left: 2px; }
   .day-info { text-align: right; }
   .day-date { font-size: 12px; color: rgba(255,255,255,.7); font-weight: 500; }
-  .day-city { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 2px; }
+  .day-city { font-size: 12px; color: rgba(255,255,255,.45); margin-top: 2px; }
   .day-title { font-size: 18px; font-weight: 700; color: white; margin-top: 10px; position: relative; z-index: 1; line-height: 1.3; }
-  .day-route { display: flex; align-items: center; gap: 4px; margin-top: 6px; font-size: 11px; color: rgba(255,255,255,.65); position: relative; z-index: 1; }
+  .day-route { display: flex; align-items: center; gap: 4px; margin-top: 6px; font-size: 12px; color: rgba(255,255,255,.65); position: relative; z-index: 1; }
   .day-route b { color: var(--amber-light); font-weight: 600; }
 
   .day-wx { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 10px 16px; background: var(--sky-bg); border-bottom: 1px solid var(--line); font-size: 12px; color: #3a6a8a; }
@@ -144,12 +144,12 @@
 
   .tl { padding: 4px 0; }
   .tb { display: flex; gap: 12px; padding: 10px 16px; }
-  .tb-time { flex-shrink: 0; width: 44px; font-size: 11px; color: var(--ink-muted); font-weight: 600; font-feature-settings: "tnum"; padding-top: 2px; }
-  .tb-time b { color: var(--forest); display: block; font-size: 13px; font-weight: 700; }
+  .tb-time { flex-shrink: 0; width: 44px; font-size: 12px; color: var(--ink-muted); font-weight: 600; font-feature-settings: "tnum"; padding-top: 2px; }
+  .tb-time b { color: var(--forest); display: block; font-size: 14px; font-weight: 700; }
   .tb-body { flex: 1; min-width: 0; }
   .tb-title { font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.4; }
   .tb-title .spot { background: linear-gradient(180deg, transparent 60%, rgba(212,149,58,.3) 60%); padding: 0 2px; }
-  .tb-meta { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
+  .tb-meta { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
   .tb-detail { margin-top: 6px; padding: 8px 10px; background: #f8faf7; border-radius: 8px; font-size: 12px; line-height: 1.55; }
   .tb-detail.kan { border-left: 3px solid var(--pine); }
   .tb-detail.kan .lbl { color: var(--pine); }
@@ -157,7 +157,7 @@
   .tb-detail.wan .lbl { color: var(--sky); }
   .tb-detail.bilei { border-left: 3px solid var(--warn); background: var(--warn-bg); }
   .tb-detail.bilei .lbl { color: var(--warn); }
-  .tb-detail .lbl { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: 2px; display: block; }
+  .tb-detail .lbl { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: 2px; display: block; }
 
   .meal { display: flex; gap: 10px; align-items: start; padding: 10px 14px; margin: 6px 12px; background: #f8faf7; border-radius: 12px; border: 1px solid var(--line); }
   .meal-ic { flex-shrink: 0; width: 32px; height: 32px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: white; }
@@ -166,28 +166,28 @@
   .meal-ic.di { background: linear-gradient(135deg, #8b2030, #5a1420); }
   .meal-ic.sn { background: linear-gradient(135deg, #5b3a8a, #3a2050); }
   .meal-body { flex: 1; min-width: 0; }
-  .meal-lbl { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; margin-bottom: 1px; }
-  .meal-name { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.4; }
-  .meal-meta { font-size: 11px; color: var(--ink-soft); margin-top: 2px; line-height: 1.5; }
-  .meal-name .badge { display: inline-block; padding: 1px 5px; background: var(--amber); color: var(--ink); font-size: 9px; font-weight: 700; border-radius: 4px; margin-left: 4px; vertical-align: middle; }
+  .meal-lbl { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-muted); font-weight: 600; margin-bottom: 1px; }
+  .meal-name { font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.4; }
+  .meal-meta { font-size: 12px; color: var(--ink-soft); margin-top: 2px; line-height: 1.5; }
+  .meal-name .badge { display: inline-block; padding: 1px 5px; background: var(--amber); color: var(--ink); font-size: 10px; font-weight: 700; border-radius: 4px; margin-left: 4px; vertical-align: middle; }
 
   .sec { padding: 32px 0 24px; scroll-margin-top: 48px; }
   .sec-hd { padding: 0 16px 16px; }
   .sec-hd h2 { font-size: 26px; font-weight: 800; color: var(--ink); letter-spacing: -.02em; line-height: 1.15; }
-  .sec-hd p { font-size: 13px; color: var(--ink-soft); margin-top: 6px; line-height: 1.6; }
+  .sec-hd p { font-size: 14px; color: var(--ink-soft); margin-top: 6px; line-height: 1.6; }
 
   .city-block { margin-bottom: 28px; }
   .city-hd { display: flex; align-items: end; gap: 12px; padding: 0 16px 12px; margin-bottom: 12px; border-bottom: 1px solid var(--line); }
-  .city-hd .mark { width: 28px; height: 28px; background: var(--forest); color: var(--amber); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; }
-  .city-hd .name { font-size: 17px; font-weight: 700; color: var(--ink); }
-  .city-hd .sub { font-size: 11px; color: var(--ink-muted); margin-top: 1px; }
+  .city-hd .mark { width: 28px; height: 28px; background: var(--forest); color: var(--amber); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
+  .city-hd .name { font-size: 18px; font-weight: 700; color: var(--ink); }
+  .city-hd .sub { font-size: 12px; color: var(--ink-muted); margin-top: 1px; }
   .sub-tag { display: inline-block; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); font-weight: 700; padding: 0 16px 6px; }
   .rest { background: var(--bg-card); margin: 0 12px 8px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); }
   .rest-head { display: flex; justify-content: space-between; align-items: start; gap: 8px; margin-bottom: 4px; }
   .rest-name { font-size: 14px; font-weight: 700; color: var(--ink); line-height: 1.3; }
-  .rest-name .badge { display: inline-block; padding: 1px 5px; background: var(--amber); color: var(--ink); font-size: 8px; font-weight: 700; border-radius: 4px; margin-left: 3px; vertical-align: middle; }
-  .rest-price { font-size: 13px; color: var(--brick); font-weight: 700; font-feature-settings: "tnum"; flex-shrink: 0; }
-  .rest-addr { font-size: 11px; color: var(--ink-soft); line-height: 1.5; }
+  .rest-name .badge { display: inline-block; padding: 1px 5px; background: var(--amber); color: var(--ink); font-size: 10px; font-weight: 700; border-radius: 4px; margin-left: 3px; vertical-align: middle; }
+  .rest-price { font-size: 14px; color: var(--brick); font-weight: 700; font-feature-settings: "tnum"; flex-shrink: 0; }
+  .rest-addr { font-size: 12px; color: var(--ink-soft); line-height: 1.5; }
   .rest-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
   .rest-tag { font-size: 10px; padding: 2px 6px; background: #f8faf7; color: var(--ink-soft); border-radius: 4px; font-weight: 500; }
 
@@ -195,26 +195,26 @@
   .warn-item { background: var(--bg-card); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; border-left: 4px solid var(--warn); }
   .warn-item.ok { border-left-color: var(--pine); }
   .warn-item.info { border-left-color: var(--sky); }
-  .warn-title { font-size: 13px; font-weight: 700; color: var(--warn); margin-bottom: 4px; }
+  .warn-title { font-size: 14px; font-weight: 700; color: var(--warn); margin-bottom: 4px; }
   .warn-item.ok .warn-title { color: var(--pine); }
   .warn-item.info .warn-title { color: #3a6a8a; }
   .warn-body { font-size: 12px; color: var(--ink-soft); line-height: 1.6; }
 
   .foot { margin: 24px 12px 40px; padding: 20px; background: var(--forest); color: white; border-radius: 18px; text-align: center; }
-  .foot h3 { font-size: 17px; margin-bottom: 8px; }
+  .foot h3 { font-size: 18px; margin-bottom: 8px; }
   .foot p { font-size: 12px; color: rgba(255,255,255,.7); line-height: 1.6; margin-bottom: 10px; }
   .foot-meta { display: flex; justify-content: center; gap: 8px; font-size: 10px; color: rgba(255,255,255,.5); }
 
   .opt { background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
   .opt-mark { font-size: 18px; font-weight: 800; color: var(--forest); line-height: 1; }
-  .opt-name { font-size: 13px; font-weight: 700; color: var(--ink); margin-top: 4px; }
-  .opt-body { font-size: 11px; color: var(--ink-soft); margin-top: 6px; line-height: 1.55; }
+  .opt-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-top: 4px; }
+  .opt-body { font-size: 12px; color: var(--ink-soft); margin-top: 6px; line-height: 1.55; }
 
   .alt-block { margin: 8px 12px 12px; padding: 12px; background: linear-gradient(135deg, #fff8e1 0%, #fffde7 100%); border-radius: 12px; border: 1px solid #ffe082; border-left: 4px solid #ffa726; }
   .alt-title { font-size: 12px; font-weight: 800; color: #e65100; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
   .alt-title::before { content: '🅑'; font-size: 14px; }
   .alt-subtitle { font-size: 10px; color: #ff6f00; font-weight: 600; margin: 8px 0 4px; letter-spacing: .04em; }
-  .alt-row { font-size: 11px; color: var(--ink-soft); padding: 3px 0 3px 12px; position: relative; line-height: 1.5; }
+  .alt-row { font-size: 12px; color: var(--ink-soft); padding: 3px 0 3px 12px; position: relative; line-height: 1.5; }
   .alt-row::before { content: '·'; position: absolute; left: 2px; color: #ffa726; font-weight: 700; }
 
   .shop-list { padding: 0 12px; }
@@ -222,10 +222,10 @@
   .shop-cat h3 { font-size: 14px; font-weight: 700; color: var(--forest); margin-bottom: 8px; padding-bottom: 4px; border-bottom: 1px solid var(--line); }
   .shop-item { display: flex; justify-content: space-between; align-items: start; padding: 8px 0; border-bottom: 1px dashed #eee; gap: 8px; }
   .shop-item:last-child { border: none; }
-  .shop-name { font-size: 13px; font-weight: 600; color: var(--ink); }
-  .shop-name .badge { display: inline-block; padding: 1px 5px; background: var(--amber); color: var(--ink); font-size: 8px; font-weight: 700; border-radius: 4px; margin-left: 3px; vertical-align: middle; }
+  .shop-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+  .shop-name .badge { display: inline-block; padding: 1px 5px; background: var(--amber); color: var(--ink); font-size: 10px; font-weight: 700; border-radius: 4px; margin-left: 3px; vertical-align: middle; }
   .shop-price { font-size: 12px; color: var(--brick); font-weight: 600; flex-shrink: 0; }
-  .shop-desc { font-size: 11px; color: var(--ink-muted); margin-top: 2px; line-height: 1.5; }
+  .shop-desc { font-size: 12px; color: var(--ink-muted); margin-top: 2px; line-height: 1.5; }
 
   .tips { padding: 0 12px; }
   .tip-block { background: var(--bg-card); border-radius: 14px; padding: 16px; margin-bottom: 14px; border: 1px solid var(--line); }
@@ -267,7 +267,7 @@
   </div>
   <div class="day-nav" id="dayNav">
     <button class="day-pill" data-target="day-0">D1 <small>10/3 悬空寺</small></button>
-    <button class="day-pill" data-target="day-1">D2 <small>10/4 千岛湖</small></button>
+    <button class="day-pill" data-target="day-1">D2 <small>10/4 灵栖洞</small></button>
     <button class="day-pill" data-target="day-2">D3 <small>10/5 古城</small></button>
     <button class="day-pill" data-target="restaurants">🍴 餐厅</button>
     <button class="day-pill" data-target="shopping">🛒 购物</button>
@@ -291,9 +291,7 @@
       <div class="tb"><div class="tb-time"><b>12:10</b></div><div class="tb-body"><div class="tb-title">建德南下车(只停 2 分钟)</div><div class="meta">提前车门候着,下车即打车</div></div></div>
       <div class="tb"><div class="tb-time"><b>12:10–12:50</b></div><div class="tb-body"><div class="tb-title">直奔大慈岩悬空寺</div><div class="meta">21.7km / 35分 / 约 ¥72 · 顺路去景区</div></div></div>
       <div class="tb"><div class="tb-time"><b>12:50</b></div><div class="tb-body"><div class="tb-title">存行李(28寸) → 吃午饭</div><div class="meta">游客中心寄存 · 景区餐厅或自带零食</div></div></div>
-      <div class="tb"><div class="tb-time"><b>13:15 前</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【大慈岩·江南悬空寺】</span> ⭐ 核心</div><div class="meta">门票 ¥75 · 8:00-16:00 · 索道约 15:00 停运</div><div class="tb-detail wan"><span class="lbl">玩什么</span>索道上山(省力,单程 ¥80) → 清音阁 → <b>天师殿悬空寺</b>(主殿,半嵌入岩半悬空)→ 双面佛(金灿灿) → 玻璃栈道(¥40,看雨势) → <b>丛林速滑下山</b>(¥60,雨天不开)</div></div></div>
-      <div class="tb-detail kan"><span class="lbl">看什么</span>与山西悬空寺齐名,"江南第一悬空寺";全国最大天然立佛;雨后常有云海(加分项)</div></div>
-      <div class="tb-detail bilei"><span class="lbl">避雷</span>玻璃栈道孩子拉大人走;雨天滑道不开,改步行下山</div></div>
+      <div class="tb"><div class="tb-time"><b>13:15 前</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【大慈岩·江南悬空寺】</span> ⭐ 核心</div><div class="meta">门票 ¥75 · 8:00-16:00 · 索道约 15:00 停运</div><div class="tb-detail wan"><span class="lbl">玩什么</span>索道上山(省力,单程 ¥80) → 清音阁 → <b>天师殿悬空寺</b>(主殿,半嵌入岩半悬空)→ 双面佛(金灿灿) → 玻璃栈道(¥40,看雨势) → <b>丛林速滑下山</b>(¥60,雨天不开)</div><div class="tb-detail kan"><span class="lbl">看什么</span>与山西悬空寺齐名,"江南第一悬空寺";全国最大天然立佛;雨后常有云海(加分项)</div><div class="tb-detail bilei"><span class="lbl">避雷</span>玻璃栈道孩子拉大人走;雨天滑道不开,改步行下山</div></div></div>
       <div class="tb"><div class="tb-time"><b>15:30 前</b></div><div class="tb-body"><div class="tb-title">取行李 → 打车回梅城</div><div class="meta">54km / 1h10 / 约 ¥190</div></div></div>
       <div class="tb"><div class="tb-time"><b>16:40</b></div><div class="tb-body"><div class="tb-title">入住雅高瑞享酒店</div></div></div>
       <div class="meal"><div class="meal-ic sn">S</div><div class="meal-body"><div class="meal-lbl">Snack · 古城小吃</div><div class="meal-name">⭐ 小武包子铺 · 建德豆腐包</div><div class="meal-meta">古城内 · 步行 1 分 · ¥2.5/只 · 现蒸爆汁</div></div></div>
@@ -312,22 +310,34 @@
 
   <article class="day" id="day-1">
     <div class="day-hd">
-      <div class="day-hd-row"><div class="day-num">D2<sup>/03</sup></div><div class="day-info"><div class="day-date">10月4日 周日</div><div class="day-city">水(主方案)</div></div></div>
-      <div class="day-title">水 · 三大备选挑一个</div>
-      <div class="day-route">主方案 = 千岛湖 ⛵ · <b>核心日</b> · 住 <b>雅高瑞享</b></div>
+      <div class="day-hd-row"><div class="day-num">D2<sup>/03</sup></div><div class="day-info"><div class="day-date">10月4日 周日</div><div class="day-city">灵栖洞+新安江(主方案)</div></div></div>
+      <div class="day-title">洞 · 室内+江景 · 雨天深度线</div>
+      <div class="day-route">主方案 = 灵栖洞+水电站+江滨 🕳️ · <b>全程不怕雨</b> · 住 <b>雅高瑞享</b></div>
     </div>
-    <div class="day-wx"><span class="icon">🌧</span> 小雨转中雨 <span class="sep">|</span> <span class="temp">17-24°C</span> <span class="sep">|</span> ☔ 三天雨最大</div>
+    <div class="day-wx"><span class="icon">🌧</span> 小雨转中雨 <span class="sep">|</span> <span class="temp">17-24°C</span> <span class="sep">|</span> ☔ 三天雨最大 · 全程室内/有棚</div>
     <div class="tl">
       <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast</div><div class="meal-name">⭐ 酒店自助早餐</div><div class="meal-meta">西式+中式+当地风味 · 7:00-10:00</div></div></div>
-      <div class="tb"><div class="tb-time"><b>07:00</b></div><div class="tb-body"><div class="tb-title">主方案 → 打车去千岛湖中心湖区</div><div class="meta">62km / 1h40 / 约 ¥220 · 必须 7 点走(13:30 后无全天环线)</div></div></div>
-      <div class="tb"><div class="tb-time"><b>08:40</b></div><div class="tb-body"><div class="tb-title">到中心湖区旅游码头买票</div><div class="meta">淳安县千岛湖镇梦姑路 348 号 · 优先 9:00–9:30 班次</div></div></div>
-      <div class="tb"><div class="tb-time"><b>09:00–15:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【千岛湖中心湖区】</span> ⭐ 核心水主方案</div><div class="meta">公交船 1 号线 / 5-7 小时 · 散客公交船约 ¥185(门票 ¥130 + 船票)</div><div class="tb-detail wan"><span class="lbl">玩什么</span>梅峰岛(俯瞰 300 余岛全景,缆车 ¥60 或徒步 20 分登顶) → 渔乐岛(餐饮娱乐) → 龙山岛(海瑞祠等人文) → 月光岛(4 岛 3 桥,最出片)</div><div class="tb-detail kan"><span class="lbl">看什么</span>烟雨千岛湖——雨天特有气质,湖面朦胧如画</div><div class="tb-detail bilei"><span class="lbl">避雷</span>船上风大带薄外套;岛上餐饮贵自带零食;记好各岛返程时间错过等下班</div></div></div>
-      <div class="tb"><div class="tb-time"><b>15:30</b></div><div class="tb-body"><div class="tb-title">千岛湖码头晚餐(鱼头)</div><div class="meta">推荐清水鱼坊/鱼味馆 · 鱼头汤 ¥80-150</div></div></div>
-      <div class="tb"><div class="tb-time"><b>17:40</b></div><div class="tb-body"><div class="tb-title">回梅城酒店</div><div class="meta">62km / 1h40 / 约 ¥220</div></div></div>
+      <div class="tb"><div class="tb-time"><b>08:30</b></div><div class="tb-body"><div class="tb-title">主方案 → 打车去灵栖洞(59km/1h/约 ¥200)</div><div class="meta">溶洞完全无雨 · 雨天首选</div></div></div>
+      <div class="tb"><div class="tb-time"><b>09:30–11:45</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【灵栖洞天】</span> ⭐ 核心主方案 · 三洞全程</div><div class="meta">线上 ¥75 / 现场 ¥80(含三洞+游船) · 2–2.5h · 8:00–16:00 停止入园</div><div class="tb-detail wan"><span class="lbl">玩什么</span>灵泉洞乘船游地下暗河 → 清风洞(86 版《西游记》取景) → 飞天魔毯 → 霭云洞(雨后常有云雾) → 滑道下山 → 石林</div><div class="tb-detail kan"><span class="lbl">看什么</span>钟乳石五彩缤纷;洞内恒温 17℃,冬暖夏凉</div><div class="tb-detail bilei"><span class="lbl">避雷</span>洞内 17℃ 必带薄外套;地面湿滑穿防滑鞋;滑道雨天可能关闭改步行</div></div></div>
+      <div class="tb"><div class="tb-time"><b>12:15</b></div><div class="tb-body"><div class="tb-title">到新安江城区午餐(30km/40 分)</div><div class="meta">白沙桥头吃鱼 · 江鲜家常</div></div></div>
+      <div class="tb"><div class="tb-time"><b>13:30–15:30</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【新安江水电站】</span> 室内为主</div><div class="meta">¥38 / 联票 ¥55-58 · 8:00–16:00 · ☎ 0571-64542543 · 停车免费</div><div class="tb-detail kan"><span class="lbl">看什么</span>中国第一座自行设计建造的大型水电站;展览馆(周二闭馆,10/4 周日正常开);观瀑</div><div class="tb-detail bilei"><span class="lbl">避雷</span>参观 1.5–2h 节奏刚好;孩子对工业史兴趣有限的话压缩到 1h</div></div></div>
+      <div class="tb"><div class="tb-time"><b>15:45–17:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【江滨公园/水杉林水上森林】</span> 散步</div><div class="meta">免费 · 雨中江雾出片</div><div class="tb-detail kan"><span class="lbl">看什么</span>新安江 17℃ 江水+雨雾,仙气飘飘;白沙桥视角最佳</div></div></div>
+      <div class="tb"><div class="tb-time"><b>17:40</b></div><div class="tb-body"><div class="tb-title">回梅城酒店</div><div class="meta">27km/45 分/约 ¥90 · 不看演艺则此时回</div></div></div>
+      <div class="tb"><div class="tb-time"><b>18:30</b></div><div class="tb-body"><div class="tb-title">双江街码头 → 19:00 江清月近人实景演艺(可选)</div><div class="meta">雨天是否开演提前问 · 看完 22:00 前回梅城</div></div></div>
       <div class="meal"><div class="meal-ic di">D</div><div class="meal-body"><div class="meal-lbl">Dinner · 建德菜</div><div class="meal-name">⭐⭐ 莘府·老豆腐鱼头(恒太城店)</div><div class="meal-meta">建德菜 · 鲜醇</div></div></div>
     </div>
     <div class="alt-block">
-      <div class="alt-title">备选 1 · 七里扬帆游船(最省事)</div>
+      <div class="alt-title">备选 1 · 千岛湖中心湖区一日(雨也成立,内容最饱满)</div>
+      <div class="alt-subtitle">条件:雨不大 / 想要招牌湖景体验 · 代价 = 7:00 早起 + 往返 3h20 车程</div>
+      <div class="alt-row">07:00 出发(必须 7 点走:13:30 后无全天环线)· 62km/1h40/约 ¥220</div>
+      <div class="alt-row">08:40 到中心湖区旅游码头(梦姑路 348 号)买票 · 优先 9:00–9:30 班</div>
+      <div class="alt-row">09:00–15:30 公交船 1 号线:梅峰岛(俯瞰 300 余岛,缆车 ¥60)→ 渔乐岛 → 龙山岛(海瑞祠)→ 月光岛(4 岛 3 桥最出片)</div>
+      <div class="alt-row">散客公交船约 ¥185(门票 ¥130+船票) · 船有棚中雨照常,仅大风大雾停航</div>
+      <div class="alt-row">15:30 码头晚餐(清水鱼坊/鱼味馆鱼头)· 17:40 回梅城</div>
+      <div class="alt-row">豪华船备选:梦想号/伯爵号约 4h,只打梅峰+月光,含自助餐,更贵更省时</div>
+    </div>
+    <div class="alt-block">
+      <div class="alt-title">备选 2 · 七里扬帆游船(最省事)</div>
       <div class="alt-subtitle">条件:不想跑远 / 雨更大想省力</div>
       <div class="alt-row">09:00 打车 5–10 分到姚坞码头(梅城镇严东关路)</div>
       <div class="alt-row">09:30 周日首班(非周末 10:30/13:00;周末加 9:00)</div>
@@ -335,18 +345,6 @@
       <div class="alt-row">可停靠葫芦瀑布观景(注:葫芦峡漂流 9/1 起停漂,但游船照常)</div>
       <div class="alt-row">13:00 左右回酒店,下午自由活动(严州古城补漏或酒店休息)</div>
       <div class="alt-row">票价:官方 ¥130(门票 80 + 船票 50) / 平台 ¥90-120</div>
-    </div>
-    <div class="alt-block">
-      <div class="alt-title">备选 2 · 灵栖洞 + 新安江城区组合线(雨天深度线)</div>
-      <div class="alt-subtitle">条件:雨大 / 想在室内+不开雨的项目</div>
-      <div class="alt-row">08:30 出发 → 09:15 到灵栖洞(59km/1h/约 ¥200)</div>
-      <div class="alt-row">09:30–11:45 灵栖洞三洞全程:灵泉洞乘船→清风洞→飞天魔毯→霭云洞→滑道</div>
-      <div class="alt-row">12:15 到新安江城区午餐(白沙桥头吃鱼,30km/40分)</div>
-      <div class="alt-row">13:30–15:30 新安江水电站(室内为主)·8:00-16:00·¥38/联票 ¥55-58</div>
-      <div class="alt-row">15:45–17:00 江滨公园/水杉林水上森林散步(免费,雨中江雾出片)</div>
-      <div class="alt-row">18:30 双江街码头 → 19:00 江清月近人实景演艺(可选,雨天提前问)</div>
-      <div class="alt-row">22:00 前回梅城</div>
-      <div class="alt-row">灵栖洞详情:线上 ¥75/现场 ¥80(含三洞+游船);8:00–16:00 停止入园;全程 2–3h;洞内 17℃ 必带薄外套;86 版《西游记》取景地</div>
     </div>
     <div class="alt-block">
       <div class="alt-title">备选 3 · 卧龙胜境漂流(兜底)</div>
@@ -367,7 +365,7 @@
       <div class="day-title">城(古镇) + 兰溪东送站</div>
       <div class="day-route">🍜 古城补完 → 打车/高铁到 <b>兰溪东</b> 15:49</div>
     </div>
-    <div class="day-wx"><span class="icon">☀️</span> 晴 <span class="sep">|</span> <span class="temp">12-23°C</span> <span class="sep">|</span> ✈️ 送机日天气好</div>
+    <div class="day-wx"><span class="icon">☀️</span> 晴 <span class="sep">|</span> <span class="temp">12-23°C</span> <span class="sep">|</span> 🚄 返程日天气好</div>
     <div class="tl">
       <div class="meal"><div class="meal-ic bf">B</div><div class="meal-body"><div class="meal-lbl">Breakfast · 古城</div><div class="meal-name">⭐ 小武包子铺 · 现蒸豆腐包</div><div class="meal-meta">古城内 · 比前几天更鲜 · ¥2.5/只 · 早上现蒸</div></div></div>
       <div class="tb"><div class="tb-time"><b>09:00</b></div><div class="tb-body"><div class="tb-title"><span class="spot">【严州古城补完】</span> ⭐ 主方案</div><div class="meta">免费入园 · 3 小时 · 澄清门晴天视野最好</div><div class="tb-detail kan"><span class="lbl">看什么</span>澄清门登城墙看三江口;玉华寺/万松楼/双塔凌云;浙大西迁旧址等展馆(联票 ¥20)</div><div class="tb-detail wan"><span class="lbl">玩什么</span>沉浸式九姓渔民剧本游;早茶有新玉发菌菇,梅城旧梦</div><div class="tb-detail bilei"><span class="lbl">避雷</span>1700 年历史底蕴重,孩子可能觉得"纪录片",用剧本游讲故事</div></div></div>
@@ -533,7 +531,7 @@
         <li><span class="warn-t">玻璃栈道晕高 ⛔</span> 孩子别勉强,拉着大人走</li>
         <li><span class="warn-t">溶洞湿滑 ⛔</span> 穿防滑鞋,不让孩子跑</li>
         <li><span class="warn-t">悬空寺4pm关门 ⛔</span> D1必须先山后酒店,索道15:00停运</li>
-        <li><span class="warn-t">千岛湖13:30后 ⛔</span> 无全天环线,必须7点出发</li>
+        <li><span class="warn-t">千岛湖(备选)13:30后 ⛔</span> 无全天环线,走备选必须7点出发</li>
         <li><span class="warn-t">漂流窗口苛刻 ⛔</span> 卧龙胜境仅14:00-15:00,迟到作废</li>
         <li><span class="warn-t">司机推荐餐厅 ⛔</span> 通常有回扣,认准攻略文中十大</li>
       </ul>
@@ -543,7 +541,7 @@
       <ul class="tip-list">
         <li><b>节奏:</b>慢,适合发呆/散步/逛吃</li>
         <li><b>D1 山(悬空寺):</b>最怕雨的景点放在到达日趁小雨拿下,先山后酒店</li>
-        <li><b>D2 水(千岛湖):</b>三天雨最大,选船上有棚的项目;千岛湖升主方案</li>
+        <li><b>D2 灵栖洞+新安江(主方案):</b>三天雨最大,主线全程室内/有棚不怕雨;千岛湖降为备选1</li>
         <li><b>D3 城(古城):</b>晴天收尾,古城离建德站20分,赶车零风险</li>
         <li><b>核心原则:</b>每天一个主题,互不重复、互不抢时间</li>
       </ul>
@@ -561,8 +559,8 @@
       <h3>🎯 备选方案速查(全部并列展示)</h3>
       <ul class="tip-list">
         <li><b>D1 备选:</b>疲劳/雨大时直接回酒店 + 严州古城短游(条件:严重疲劳、孩子情绪不好、悬空寺索道停运)</li>
-        <li><b>D2 备选1(最省事):</b>七里扬帆游船 — 酒店旁姚坞码头,船游2.5-4h,《富春山居图》实景段,雨中照开</li>
-        <li><b>D2 备选2(雨天深度线):</b>灵栖洞+新安江水电站+江滨公园组合线 — 三处都不怕雨</li>
+        <li><b>D2 备选2(最省事):</b>七里扬帆游船 — 酒店旁姚坞码头,船游2.5-4h,《富春山居图》实景段,雨中照开</li>
+        <li><b>D2 备选1(内容最饱满):</b>千岛湖中心湖区一日 — 船有棚雨也成立,代价是7点出发+往返3h20</li>
         <li><b>D2 备选3(兜底):</b>卧龙胜境漂流 — 14:00-15:00窗口,仅1.5h,需天气转晴</li>
         <li><b>D3 加分项1(最省心):</b>七里扬帆游船 — 9:00或10:30船次,就在酒店旁</li>
         <li><b>D3 加分项2(性价比):</b>新叶古村 — 800年古村,《爸爸去哪儿》取景</li>
@@ -576,7 +574,7 @@
         <li><b>千岛湖:</b>薄外套(船上风大)、零食、充电宝(5-7h 在船上/岛上)</li>
         <li><b>溶洞/清晨:</b>薄外套(灵栖洞 17℃、D3 早晨 12℃)</li>
         <li><b>漂流:</b>速干衣/泳衣、整套换洗、手机防水袋、拖鞋</li>
-        <li><b>出发前:</b>① 12306 核对车次时刻 ② 10/3 上午问大慈岩索道 0571-64549418 ③ 千岛湖船班看当日余票设 7:00 闹钟 ④ 大慈岩寄存柜内径</li>
+        <li><b>出发前:</b>① 12306 核对车次时刻 ② 10/3 上午问大慈岩索道 0571-64549418 ③ 若走千岛湖备选,看船班当日余票设 7:00 闹钟;确认江清月近人演艺雨天是否开演 ④ 大慈岩寄存柜内径</li>
       </ul>
     </div>
   </div>
@@ -584,7 +582,7 @@
 
 <div class="foot">
   <h3>山 → 水 → 城 三主题</h3>
-  <p>严州古城 + 大慈岩悬空寺 + 千岛湖游船 · 备选备选(七里扬帆/灵栖洞/卧龙漂流/新叶古村/八卦村)· 3 天 2 晚亲子慢游</p>
+  <p>严州古城 + 大慈岩悬空寺 + 灵栖洞·新安江 · 备选(千岛湖/七里扬帆/卧龙漂流/新叶古村/八卦村)· 3 天 2 晚亲子慢游</p>
   <div class="foot-meta"><span>2026-10-02 定稿</span><span>|</span><span>雅高瑞享酒店(严州古城店)</span></div>
 </div>
 
